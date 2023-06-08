@@ -1,5 +1,5 @@
 {
-  "name": "xxxnamexxx",
+  "name": "boilerplate",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -8,6 +8,7 @@
     "start": "webpack serve --open",
     "build": "webpack",
     "watch": "webpack --watch",
+    "init-demo": "git add dist && git commit -m 'Initial dist subtree commit' && git subtree push --prefix dist origin gh-pages",
     "deploy-demo": "npm run build && git add . && git commit -m 'deploy-demo' && git push origin main && git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
