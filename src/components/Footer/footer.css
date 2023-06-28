@@ -1,0 +1,56 @@
+/* footer */
+footer {
+  background-color: var(--gray-5);
+  font-size: var(--footer-font-size);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  color: white;
+}
+footer img {
+  height: calc(var(--footer-font-size) - 0.1rem);
+}
+footer a {
+  margin-left: var(--marginSpace);
+}
+
+@keyframes github-hover-in {
+  from {
+    rotate: 0deg;
+    scale: 1;
+  }
+  to {
+    rotate: 720deg;
+    scale: 1.2;
+  }
+}
+.github-hover-in {
+  animation: github-hover-in 1s forwards;
+}
+
+@keyframes github-hover-out {
+  from {
+    rotate: 720deg;
+    scale: 1.2;
+  }
+  to {
+    rotate: 0deg;
+    scale: 1;
+  }
+}
+.github-hover-out {
+  animation: github-hover-out 1s forwards;
+}
+
+footer img:active {
+  scale: 1;
+}
+
+#top-link:visited {
+  color: var(--links);
+}
+
+#top-link:visited {
+  color: var(--links);
+}
