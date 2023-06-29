@@ -1,6 +1,6 @@
 /* footer */
 footer {
-  background-color: var(--gray-5);
+  background-color: var(--gray-9);
   font-size: var(--footer-font-size);
   padding: 2rem;
   display: grid;
@@ -15,32 +15,8 @@ footer a {
   margin-left: var(--marginSpace);
 }
 
-@keyframes github-hover-in {
-  from {
-    rotate: 0deg;
-    scale: 1;
-  }
-  to {
-    rotate: 720deg;
-    scale: 1.2;
-  }
-}
-.github-hover-in {
-  animation: github-hover-in 1s forwards;
-}
-
-@keyframes github-hover-out {
-  from {
-    rotate: 720deg;
-    scale: 1.2;
-  }
-  to {
-    rotate: 0deg;
-    scale: 1;
-  }
-}
-.github-hover-out {
-  animation: github-hover-out 1s forwards;
+#top-link:hover {
+  font-weight: bolder !important;
 }
 
 footer img:active {
@@ -53,4 +29,34 @@ footer img:active {
 
 #top-link:visited {
   color: var(--links);
+}
+
+/* ANIMATIONS */
+.github-hover-in {
+  animation: github-hover-in 1s forwards;
+}
+
+@keyframes github-hover-in {
+  from {
+    rotate: 0deg;
+    scale: 1;
+  }
+  to {
+    rotate: 720deg;
+    scale: 1.2;
+  }
+}
+
+.github-hover-out {
+  animation: github-hover-out 1s forwards;
+}
+@keyframes github-hover-out {
+  from {
+    rotate: 720deg;
+    scale: 1.2;
+  }
+  to {
+    rotate: 0deg;
+    scale: 1;
+  }
 }

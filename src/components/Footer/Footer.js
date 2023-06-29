@@ -1,14 +1,29 @@
 import GitHubIcon from "./logos/github-mark-white.png";
 
+// DYNAMIC VARIABLES
+const dynamicYear = new Date().getFullYear();
+
+// LINK STRINGS
 const githubLinkString =
   "https://github.com/carlin-mitchell/todo-list-webpack-TOP";
+
+// ANIMATION METHODS
+const githubIconHoverIn = function () {
+  this.classList.remove("github-hover-out");
+  this.classList.add("github-hover-in");
+};
+
+const githubIconHoverOut = function () {
+  this.classList.remove("github-hover-in");
+  this.classList.add("github-hover-out");
+};
 
 const Footer = () => {
   const footer = Object.assign(document.createElement("footer"), {});
 
   const copyrightContainer = Object.assign(document.createElement("div"), {
     className: "copyright-container",
-    innerText: `© Carlin Mitchell ${new Date().getFullYear()}`,
+    innerText: `© Carlin Mitchell ${dynamicYear}`,
   });
 
   const topContainer = Object.assign(document.createElement("div"), {
@@ -29,6 +44,8 @@ const Footer = () => {
   const githubIcon = Object.assign(document.createElement("img"), {
     src: GitHubIcon,
     className: "github-icon",
+    onmouseover: githubIconHoverIn,
+    onmouseout: githubIconHoverOut,
   });
 
   footer.appendChild(copyrightContainer);
