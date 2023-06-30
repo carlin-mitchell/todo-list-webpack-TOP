@@ -1,3 +1,5 @@
+import Element from "../Element";
+
 import GitHubIcon from "./logos/github-mark-white.png";
 
 // DYNAMIC VARIABLES
@@ -18,30 +20,31 @@ const githubIconHoverOut = function () {
   this.classList.add("github-hover-out");
 };
 
+// COMPONENT
 const Footer = () => {
-  const footer = Object.assign(document.createElement("footer"), {});
+  const footer = Element("footer", {});
 
-  const copyrightContainer = Object.assign(document.createElement("div"), {
+  const copyrightContainer = Element("div", {
     className: "copyright-container",
     innerText: `© Carlin Mitchell ${dynamicYear}`,
   });
 
-  const topContainer = Object.assign(document.createElement("div"), {
+  const topContainer = Element("div", {
     className: "top-attribution",
     innerText: "Inspired by",
   });
 
-  const topLink = Object.assign(document.createElement("a"), {
+  const topLink = Element("a", {
     id: "top-link",
     innerText: "The Odin Project",
     href: "https://www.theodinproject.com/",
   });
 
-  const githubLink = Object.assign(document.createElement("a"), {
+  const githubLink = Element("a", {
     href: githubLinkString,
   });
 
-  const githubIcon = Object.assign(document.createElement("img"), {
+  const githubIcon = Element("img", {
     src: GitHubIcon,
     className: "github-icon",
     onmouseover: githubIconHoverIn,
