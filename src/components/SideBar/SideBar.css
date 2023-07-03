@@ -1,0 +1,4 @@
+#side-bar {
+  grid-area: sidebar;
+  background-color: var(--gray-5);
+}

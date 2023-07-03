@@ -8,7 +8,7 @@ import Element from "../Element";
 
 // COMPONENT
 const Component = () => {
-  const parentContainer = Element("div", {});
+  const parentContainer = Element("header");
   return parentContainer;
 };
 

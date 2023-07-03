@@ -7,9 +7,9 @@ import Element from "../Element";
 // ANIMATION METHODS
 
 // COMPONENT
-const Component = () => {
-  const parentContainer = Element("div", {});
+const Main = () => {
+  const parentContainer = Element("main", { id: "main" });
   return parentContainer;
 };
 
-export default Component;
+export default Main;
