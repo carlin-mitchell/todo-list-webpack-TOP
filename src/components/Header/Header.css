@@ -5,3 +5,17 @@ header {
   grid-template-areas: "header-left header-right";
   background-color: var(--gray-8);
 }
+
+#site-title {
+  grid-area: header-right;
+  align-self: center;
+  justify-self: center;
+  font-size: 3rem;
+  color: white;
+}
+
+#menu-icon {
+  align-self: center;
+  margin-left: var(--space-md);
+  z-index: 1;
+}
