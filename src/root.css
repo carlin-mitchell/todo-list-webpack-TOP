@@ -30,4 +30,7 @@
 
   /* utility */
   --marginSpace: 0.3rem;
+  /* 
+  component sizes */
+  --sidebar-width: 20rem;
 }
