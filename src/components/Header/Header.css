@@ -4,6 +4,8 @@ header {
   grid-template-columns: var(--sidebar-width, 1fr);
   grid-template-areas: "header-left header-right";
   background-color: var(--gray-8);
+
+  padding: var(--space-md);
 }
 
 #site-title {
@@ -16,6 +18,15 @@ header {
 
 #menu-icon {
   align-self: center;
-  margin-left: var(--space-md);
   z-index: 1;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+#menu-icon:hover {
+  scale: 1.05;
+}
+
+#menu-icon:active {
+  scale: 1;
 }

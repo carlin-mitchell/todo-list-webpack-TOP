@@ -2,7 +2,7 @@ import Element from "../Element";
 
 import SiteTitle from "./SiteTitle/SiteTitle";
 
-import MenuIcon from "./CollapseIcon/assets/menu-white.png";
+import MenuIcon from "./MenuIcon/assets/menu-white.png";
 
 // DYNAMIC VARIABLES
 

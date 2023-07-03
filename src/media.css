@@ -1,0 +1,28 @@
+@media only screen and (max-width: 800px) {
+  #content {
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: 5rem 1fr 2fr max-content;
+    grid-template-areas:
+      "header header"
+      "sidebar sidebar"
+      "main main"
+      "footer footer";
+  }
+
+  header {
+    grid-template-columns: max-content 1fr;
+  }
+
+  #menu-icon {
+    margin-left: 0;
+    visibility: visible;
+  }
+
+  #site-title {
+    grid-area: header-right;
+    align-self: center;
+    justify-self: center;
+    font-size: 3rem;
+    color: white;
+  }
+}

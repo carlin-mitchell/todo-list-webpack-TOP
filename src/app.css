@@ -22,3 +22,5 @@ body {
 .test-header {
   color: red;
 }
+
+@import url("./media.css");
