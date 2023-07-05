@@ -24,3 +24,11 @@ body {
 }
 
 @import url("./media.css");
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}

@@ -13,6 +13,11 @@
     grid-template-columns: max-content 1fr;
   }
 
+  main {
+    grid-row: 2/4;
+    z-index: -1;
+  }
+
   #menu-icon {
     margin-left: 0;
     visibility: visible;

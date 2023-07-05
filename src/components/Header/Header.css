@@ -20,7 +20,6 @@ header {
   align-self: center;
   z-index: 1;
   cursor: pointer;
-  visibility: hidden;
 }
 
 #menu-icon:hover {

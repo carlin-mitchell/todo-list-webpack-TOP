@@ -2,7 +2,7 @@ import Element from "../Element";
 
 import SiteTitle from "./SiteTitle/SiteTitle";
 
-import MenuIcon from "./MenuIcon/assets/menu-white.png";
+import MenuIcon from "./MenuIcon/MenuIcon";
 
 // DYNAMIC VARIABLES
 
@@ -14,10 +14,8 @@ import MenuIcon from "./MenuIcon/assets/menu-white.png";
 const Component = () => {
   const parentContainer = Element("header");
 
-  const img = Element("img", { id: "menu-icon", src: MenuIcon });
-
   parentContainer.appendChild(SiteTitle());
-  parentContainer.appendChild(img);
+  parentContainer.appendChild(MenuIcon());
 
   return parentContainer;
 };
