@@ -1,23 +1,33 @@
 header {
   grid-area: header;
   display: grid;
-  grid-template-columns: var(--sidebar-width, 1fr);
-  grid-template-areas: "header-left header-right";
+  grid-template-columns: max-content 1fr 1fr;
+
   background-color: var(--gray-8);
 
   padding: var(--space-md);
+
+  z-index: 2;
+}
+
+header > * {
+  align-self: center;
+}
+
+#site-icon {
+  margin-right: 0.75rem;
 }
 
 #site-title {
-  grid-area: header-right;
   align-self: center;
-  justify-self: center;
-  font-size: 3rem;
+  justify-self: left;
+  font-size: 2rem;
   color: white;
 }
 
 #menu-icon {
-  align-self: center;
+  /* align-self: center; */
+  justify-self: right;
   z-index: 1;
   cursor: pointer;
 }

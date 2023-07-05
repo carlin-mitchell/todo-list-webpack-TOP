@@ -9,8 +9,16 @@ import MenuIconSrc from "./assets/menu-white.png";
 function toggleSidebar() {
   const sideBar = document.querySelector("#side-bar");
 
-  sideBar.classList.toggle("visible");
-  sideBar.classList.toggle("hidden");
+  if (sideBar.classList[0] === "visible") {
+    sideBar.className = "slide-up";
+  } else if (sideBar.classList.contains("slide-up")) {
+    sideBar.classList.remove("slide-up");
+    sideBar.classList.add("slide-down");
+  } else if (sideBar.classList.contains("slide-down")) {
+    sideBar.classList.remove("slide-down");
+    sideBar.classList.add("slide-up");
+  }
+
   return;
 }
 

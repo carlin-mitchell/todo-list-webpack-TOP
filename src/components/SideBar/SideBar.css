@@ -1,4 +1,33 @@
 #side-bar {
   grid-area: sidebar;
-  background-color: var(--gray-5);
+  background-color: var(--gray-3);
+}
+
+.slide-down {
+  animation: slide-down 0.75s forwards;
+}
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+  to {
+    transform: translateY(0%);
+    visibility: visible;
+  }
+}
+
+.slide-up {
+  animation: slide-up 0.75s forwards;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(0%);
+    visibility: visible;
+  }
+  to {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
 }

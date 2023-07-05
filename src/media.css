@@ -10,7 +10,7 @@
   }
 
   header {
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: max-content max-content 1fr;
   }
 
   main {
@@ -24,10 +24,9 @@
   }
 
   #site-title {
-    grid-area: header-right;
     align-self: center;
     justify-self: center;
-    font-size: 3rem;
+
     color: white;
   }
 }
