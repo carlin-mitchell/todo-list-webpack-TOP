@@ -1,5 +1,7 @@
 import Element from "../Element";
 
+import TodoForm from "./TodoForm/TodoForm";
+
 // DYNAMIC VARIABLES
 
 // LINK STRINGS
@@ -8,7 +10,11 @@ import Element from "../Element";
 
 // COMPONENT
 const Todos = () => {
-  const parentContainer = Element("div", {});
+  const parentContainer = Element("div", {
+    id: "todos",
+  });
+
+  parentContainer.appendChild(TodoForm());
   return parentContainer;
 };
 

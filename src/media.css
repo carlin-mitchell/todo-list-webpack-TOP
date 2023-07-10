@@ -29,4 +29,8 @@
 
     color: white;
   }
+
+  #todos {
+    padding: 25px;
+  }
 }

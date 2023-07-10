@@ -1,14 +1,42 @@
 import Element from "../../Element";
 
+import PlusSignWhite from "../assets/plus-sign-white.png";
+import PlusSignGray9 from "../assets/plus-sign-gray-9.svg";
+
 // DYNAMIC VARIABLES
 
 // LINK STRINGS
 
-// ANIMATION METHODS
+// METHODS
+const addTodo = (e) => {
+  e.preventDefault();
+};
 
 // COMPONENT
 const TodoForm = () => {
-  const parentContainer = Element("div", {});
+  const parentContainer = Element("form", {
+    id: "todo-form",
+    className: "todo",
+  });
+
+  const input = Element("input", {
+    type: "text",
+  });
+
+  const addButton = Element("button", {
+    onclick: function (e) {
+      addTodo(e);
+    },
+  });
+
+  const plusSign = Element("img", {
+    src: PlusSignGray9,
+  });
+
+  addButton.appendChild(plusSign);
+  parentContainer.appendChild(input);
+  parentContainer.appendChild(addButton);
+
   return parentContainer;
 };
 
