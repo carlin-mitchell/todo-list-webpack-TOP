@@ -33,3 +33,7 @@ body {
 .visible {
   visibility: visible;
 }
+
+input {
+  -webkit-user-select: text;
+}
