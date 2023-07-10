@@ -1,6 +1,7 @@
 #side-bar {
   grid-area: sidebar;
   background-color: var(--gray-3);
+  z-index: 1;
 }
 
 .slide-down {
