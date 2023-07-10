@@ -1,6 +1,8 @@
-import { v4 as uudiv4 } from "uuid";
+import { endOfDay } from "date-fns";
+import { v4 as uuidv4 } from "uuid";
 
 const listItem = {
+  id: null,
   content: null,
   dateCreated: null,
   completed: false,
@@ -14,6 +16,14 @@ let data = {
   },
 };
 
+const testId = uuidv4();
+data.todoListApp.listName.default[testId] = {
+  id: testId,
+  content: "this is only a test",
+  dateCreated: new Date(),
+  completed: false,
+};
+
 const getDataFromLocalStorage = () => {
   const appData = JSON.parse(window.localStorage.getItem("todoListApp"));
 
@@ -21,6 +31,14 @@ const getDataFromLocalStorage = () => {
     data = appData;
   } else {
     window.localStorage.setItem("todoListApp", JSON.stringify(data));
+  }
+};
+
+const clearTodos = () => {
+  const todos = document.querySelector("#todos");
+
+  while (todos.childNodes.length > 1) {
+    todos.removeChild(todos.lastChild);
   }
 };
 

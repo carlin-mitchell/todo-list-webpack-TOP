@@ -11,6 +11,11 @@ form.todo {
   background-color: var(--gray-4);
 }
 
+form input,
+form button {
+  border: 2px solid var(--gray-9);
+}
+
 form button {
   display: grid;
   justify-content: center;
@@ -21,6 +26,15 @@ form button {
   justify-self: end;
 }
 
+form button:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+form button:active {
+  scale: 1;
+}
+
 form button img {
   height: 1.5rem;
 }
@@ -29,6 +43,7 @@ form button img {
   width: 100%;
   border-radius: var(--br-sm);
   font-size: 1rem;
+  padding: 3px;
 }
 
 .todo:first-child {
