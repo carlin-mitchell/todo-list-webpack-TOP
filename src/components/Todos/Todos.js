@@ -2,6 +2,13 @@ import Element from "../Element";
 
 import TodoForm from "./TodoForm/TodoForm";
 
+import Todo from "./Todo/Todo";
+
+import todoService from "../../services/todoService";
+
+const todos = Object.values(todoService.data.todoListApp.listName.default);
+console.log(todos);
+
 // DYNAMIC VARIABLES
 
 // LINK STRINGS
@@ -15,6 +22,11 @@ const Todos = () => {
   });
 
   parentContainer.appendChild(TodoForm());
+
+  todos.forEach((todo) => {
+    parentContainer.appendChild(Todo(todo));
+  });
+
   return parentContainer;
 };
 

@@ -7,8 +7,26 @@ import Element from "../../Element";
 // ANIMATION METHODS
 
 // COMPONENT
-const Component = () => {
-  const parentContainer = Element("div", {});
+const Component = (todoObj) => {
+  const { id, content, dateCreated, completed } = todoObj;
+
+  const parentContainer = Element("div", {
+    id: id,
+    className: "todo todo-item",
+  });
+
+  const checkbox = Element("button", { innerText: "chk" });
+
+  const deleteIcon = Element("button", { innerText: "del" });
+
+  const todoContent = Element("div", {
+    innerText: content,
+  });
+
+  parentContainer.appendChild(checkbox);
+  parentContainer.appendChild(todoContent);
+  parentContainer.appendChild(deleteIcon);
+
   return parentContainer;
 };
 
