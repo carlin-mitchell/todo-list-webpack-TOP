@@ -4,7 +4,8 @@ import Element from "../../Element";
 
 // LINK STRINGS
 
-// ANIMATION METHODS
+// METHODS
+function deleteTodo(projectName, todoId) {}
 
 // COMPONENT
 const Component = (todoObj) => {
@@ -17,7 +18,12 @@ const Component = (todoObj) => {
 
   const checkbox = Element("button", { innerText: "chk" });
 
-  const deleteIcon = Element("button", { innerText: "del" });
+  const deleteButton = Element("button", {
+    innerText: "del",
+    onclick: function () {
+      deleteTodo("default", id);
+    },
+  });
 
   const todoContent = Element("div", {
     innerText: content,
@@ -25,7 +31,7 @@ const Component = (todoObj) => {
 
   parentContainer.appendChild(checkbox);
   parentContainer.appendChild(todoContent);
-  parentContainer.appendChild(deleteIcon);
+  parentContainer.appendChild(deleteButton);
 
   return parentContainer;
 };
