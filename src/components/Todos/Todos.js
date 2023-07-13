@@ -2,14 +2,16 @@ import Element from "../Element";
 
 import TodoForm from "./TodoForm/TodoForm";
 
-import Todo from "./Todo/Todo";
-
-import todoService from "../../services/todoService";
-
-const todos = Object.values(todoService.data.todoListApp.listName.default);
-console.log(todos);
+import {
+  todoData,
+  getProjectTodos,
+  addTodoToProject,
+} from "../../managers/todoDataManager";
 
 // DYNAMIC VARIABLES
+
+const todos = getProjectTodos("default");
+// addTodoToProject("default", "some new content");
 
 // LINK STRINGS
 
@@ -18,14 +20,10 @@ console.log(todos);
 // COMPONENT
 const Todos = () => {
   const parentContainer = Element("div", {
-    id: "todos",
+    id: "todos-container",
   });
 
   parentContainer.appendChild(TodoForm());
-
-  todos.forEach((todo) => {
-    parentContainer.appendChild(Todo(todo));
-  });
 
   return parentContainer;
 };

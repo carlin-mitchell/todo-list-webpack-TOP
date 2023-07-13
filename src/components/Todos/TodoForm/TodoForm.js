@@ -16,7 +16,6 @@ const addTodo = (e) => {
 const TodoForm = () => {
   const parentContainer = Element("form", {
     id: "todo-form",
-    className: "todo",
   });
 
   const input = Element("input", {

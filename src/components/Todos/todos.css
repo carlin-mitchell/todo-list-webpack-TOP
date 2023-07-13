@@ -1,14 +1,15 @@
-#todos {
+#todos-container {
   grid-area: todos;
   padding: 45px 15%;
 }
 
-.todo {
+.todo,
+#todo-form {
   background-color: var(--gray-2);
   padding: var(--space-md);
 }
 
-form.todo {
+#todo-form {
   display: grid;
   gap: 25px;
   grid-template-columns: 1fr 3rem;
@@ -62,7 +63,7 @@ form button img {
   align-items: center;
 }
 
-.todo:first-child {
+#todo-form:first-child {
   border-radius: var(--br-md) var(--br-md) 0 0;
 }
 
@@ -70,6 +71,6 @@ form button img {
   border-radius: 0 0 var(--br-md) var(--br-md);
 }
 
-.todo:only-child {
+#todo-form:only-child {
   border-radius: var(--br-md);
 }
