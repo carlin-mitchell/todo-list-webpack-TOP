@@ -1,11 +1,17 @@
 import Element from "../../Element";
 
+import data from "../../../managers/todoDataManager";
+import ui from "../../../managers/uiManager";
+
 // DYNAMIC VARIABLES
 
 // LINK STRINGS
 
 // METHODS
-function deleteTodo(projectName, todoId) {}
+function deleteTodo(todoId) {
+  data.removeTodoFromProject(todoId);
+  ui.refreshProjectTodos();
+}
 
 // COMPONENT
 const Component = (todoObj) => {
@@ -21,7 +27,7 @@ const Component = (todoObj) => {
   const deleteButton = Element("button", {
     innerText: "del",
     onclick: function () {
-      deleteTodo("default", id);
+      deleteTodo(id);
     },
   });
 

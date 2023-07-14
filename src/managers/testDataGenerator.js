@@ -15,5 +15,5 @@ const testData = [
 ];
 
 export function initTestData() {
-  testData.forEach((todo) => addTodoToProject("default", todo.content));
+  testData.forEach((todo) => addTodoToProject(todo.content));
 }

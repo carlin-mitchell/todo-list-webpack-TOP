@@ -4,9 +4,9 @@ import Todo from "../components/Todos/Todo/Todo";
 
 /**
  *
- * @param {string} projectName the project name todos should be displayed for
+ * @param {string} projectName the project name todos should be displayed for. If no value provided "default" is used.
  */
-export function displayProjectTodos(projectName) {
+export function displayProjectTodos(projectName = "default") {
   const todosContainer = document.querySelector("#todos-container");
   const projectTodos = getProjectTodos(projectName);
   projectTodos.forEach((todoObj) => todosContainer.appendChild(Todo(todoObj)));
@@ -28,10 +28,9 @@ export function clearProjectTodos() {
 
 /**
  *
- * @param {string} projectName the project name todos should be displayed for if no value provided "default" is used
+ * @param {string} projectName the project name todos should be displayed for. If no value provided "default" is used.
  */
-export function refreshProjectTodos(projectName) {
-  projectName = projectName ? projectName : "default";
+export function refreshProjectTodos(projectName = "default") {
   clearProjectTodos();
   displayProjectTodos(projectName);
 }

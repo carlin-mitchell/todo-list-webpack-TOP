@@ -15,7 +15,7 @@ const addTodo = (e) => {
   const inputElement = document.querySelector("form input");
   const { value: todoContent } = inputElement;
 
-  data.addTodoToProject("default", todoContent);
+  data.addTodoToProject(todoContent);
   ui.clearInputValue(inputElement);
   ui.refreshProjectTodos();
 };
