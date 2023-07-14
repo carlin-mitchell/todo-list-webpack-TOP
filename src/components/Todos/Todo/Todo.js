@@ -34,7 +34,7 @@ const Component = (todoObj) => {
   });
   const plusSign = Element("img", {
     src: PlusSignGray9,
-    // add the animation if the todo is new
+    // add the animation if the todo is new, have it enter rotated already if not
     className: `delete button ${todoObj.isNew ? "rotate45" : "rotated45"}`,
   });
 

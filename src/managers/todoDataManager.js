@@ -66,6 +66,13 @@ export function removeTodoFromProject(todoId, projectName = "default") {
   return todoToRemove;
 }
 
+/**
+ *
+ * @param {object} updateObj an object containing the updates required
+ * @param {string} todoId todoId the id of the Todo object to be updated
+ * @param {string} projectName the name of he project the todo will be updated in. If no value provided "default" is used.
+ * @returns {object} the updated todo object
+ */
 export function updateProjectTodo(updateObj, todoId, projectName = "default") {
   const currentTodoObj = todoData.projects[projectName][todoId];
   const updatedTodoObj = { ...currentTodoObj, ...updateObj };

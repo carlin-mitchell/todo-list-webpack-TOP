@@ -27,10 +27,6 @@ export function displayProjectTodos(projectName = "default") {
   projectTodos.forEach((todoObj) => {
     const todoElement = Todo(todoObj);
 
-    // if (todoObj.isNew) {
-    //   todoElement.classList.add("slide-down");
-    // }
-
     todosContainer.appendChild(todoElement);
 
     todoObj.isNew = false;
@@ -39,9 +35,9 @@ export function displayProjectTodos(projectName = "default") {
 
 /**
  *
- * @returns undefined if three are no Todo elements to clear
+ * @param {string} projectName the project name todos should be displayed for. If no value provided "default" is used.
  */
-export function clearProjectTodos() {
+export function clearProjectTodos(projectName = "default") {
   const todosContainer = document.querySelector("#todos-container");
   if (!todosContainer.childNodes.length > 1) return;
 
