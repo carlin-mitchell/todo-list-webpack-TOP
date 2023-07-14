@@ -74,6 +74,10 @@ button {
   border-radius: 0 0 var(--br-md) var(--br-md);
 }
 
+.todo-item {
+  border-bottom: 1px solid var(--gray-9);
+}
+
 #todo-form:only-child {
   border-radius: var(--br-md);
 }
