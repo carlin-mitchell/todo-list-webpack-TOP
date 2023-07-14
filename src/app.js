@@ -4,6 +4,7 @@ import "./app.css";
 import { initTestData } from "./managers/testDataGenerator";
 
 import ui from "./managers/uiManager";
+import data from "./managers/todoDataManager";
 
 import Content from "./components/Content/Content";
 
@@ -15,3 +16,6 @@ if (testing) {
 }
 
 ui.displayInitialTodos();
+
+data.saveDataToLocalStorage();
+data.getDataFromLocalStorage();

@@ -1,10 +1,23 @@
 import { v4 as uuidv4 } from "uuid";
 
-export const todoData = {
+export let todoData = {
   projects: {
     default: {},
   },
 };
+
+export function saveDataToLocalStorage() {
+  window.localStorage.setItem("todoAppData"), JSON.stringify(todoData);
+}
+
+export function getDataFromLocalStorage() {
+  const data = window.localStorage.getItem("todoAppData");
+
+  if (data) {
+    todoData = data;
+    console.log(data);
+  }
+}
 
 /**
  *
@@ -88,4 +101,6 @@ export default {
   getProjectTodos,
   addTodoToProject,
   updateProjectTodo,
+  saveDataToLocalStorage,
+  getDataFromLocalStorage,
 };
