@@ -31,7 +31,6 @@ const TodoForm = () => {
 
   const input = Element("input", {
     type: "text",
-    focus: true,
   });
 
   const addButton = Element("button", {

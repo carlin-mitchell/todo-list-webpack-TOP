@@ -7,15 +7,16 @@ export let todoData = {
 };
 
 export function saveDataToLocalStorage() {
-  window.localStorage.setItem("todoAppData"), JSON.stringify(todoData);
+  window.localStorage.setItem("todoAppData", JSON.stringify(todoData));
 }
 
 export function getDataFromLocalStorage() {
   const data = window.localStorage.getItem("todoAppData");
 
+  console.log(todoData);
   if (data) {
-    todoData = data;
-    console.log(data);
+    todoData = JSON.parse(data);
+    console.log(todoData);
   }
 }
 
