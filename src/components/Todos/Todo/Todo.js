@@ -3,6 +3,8 @@ import Element from "../../Element";
 import data from "../../../managers/todoDataManager";
 import ui from "../../../managers/uiManager";
 
+import PlusSignGray9 from "../assets/plus-sign-gray-9.svg";
+
 // DYNAMIC VARIABLES
 
 // LINK STRINGS
@@ -19,17 +21,24 @@ const Component = (todoObj) => {
 
   const parentContainer = Element("div", {
     id: id,
-    className: "todo todo-item",
+    // add the animation if the todo is new
+    className: `todo todo-item ${todoObj.isNew ? "slide-down" : ""}`,
   });
 
   const checkbox = Element("button", { innerText: "chk" });
 
   const deleteButton = Element("button", {
-    innerText: "del",
     onclick: function () {
       deleteTodo(id);
     },
   });
+  const plusSign = Element("img", {
+    src: PlusSignGray9,
+    // add the animation if the todo is new
+    className: `delete button ${todoObj.isNew ? "rotate45" : "rotated45"}`,
+  });
+
+  deleteButton.appendChild(plusSign);
 
   const todoContent = Element("div", {
     innerText: content,

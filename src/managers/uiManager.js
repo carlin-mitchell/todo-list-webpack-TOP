@@ -27,9 +27,9 @@ export function displayProjectTodos(projectName = "default") {
   projectTodos.forEach((todoObj) => {
     const todoElement = Todo(todoObj);
 
-    if (todoObj.isNew) {
-      todoElement.classList.add("slide-down");
-    }
+    // if (todoObj.isNew) {
+    //   todoElement.classList.add("slide-down");
+    // }
 
     todosContainer.appendChild(todoElement);
 

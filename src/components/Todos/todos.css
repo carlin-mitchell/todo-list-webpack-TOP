@@ -20,30 +20,31 @@
 }
 
 form input,
-form button {
+button {
   border: 2px solid var(--gray-9);
+  border-radius: var(--br-sm);
 }
 
-form button {
+.todo button {
   display: grid;
   justify-content: center;
   align-items: center;
-  border-radius: var(--br-sm);
+
   height: 2rem;
   aspect-ratio: 1;
   justify-self: end;
 }
 
-form button:hover {
+.todo button :hover {
   scale: 1.05;
   cursor: pointer;
 }
 
-form button:active {
+.todo button :active {
   scale: 1;
 }
 
-form button img {
+.todo button img {
   height: 1.5rem;
 }
 
@@ -75,6 +76,26 @@ form button img {
 
 #todo-form:only-child {
   border-radius: var(--br-md);
+}
+
+.rotated45 {
+  transform: rotate(45deg);
+}
+
+.rotate45 {
+  animation-name: rotate45;
+  animation-delay: 0.2s;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate45 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
 }
 
 .slide-down {
