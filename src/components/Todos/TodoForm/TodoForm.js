@@ -15,9 +15,11 @@ const addTodo = (e) => {
   const inputElement = document.querySelector("form input");
   const { value: todoContent } = inputElement;
 
-  data.addTodoToProject(todoContent);
-  ui.clearInputValue(inputElement);
-  ui.refreshProjectTodos();
+  if (todoContent) {
+    data.addTodoToProject(todoContent);
+    ui.clearInputValue(inputElement);
+    ui.refreshProjectTodos();
+  }
 };
 
 // COMPONENT

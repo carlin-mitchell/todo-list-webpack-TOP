@@ -1,10 +1,12 @@
 #todos-container {
+  display: grid;
   grid-area: todos;
   padding: 45px 15%;
 }
 
 .todo,
 #todo-form {
+  z-index: 2;
   background-color: var(--gray-2);
   padding: var(--space-md);
 }
@@ -73,4 +75,18 @@ form button img {
 
 #todo-form:only-child {
   border-radius: var(--br-md);
+}
+
+.slide-down {
+  animation: slide-down 1s forwards;
+}
+@keyframes slide-down {
+  from {
+    z-index: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    z-index: 1;
+    transform: translateY(0%);
+  }
 }

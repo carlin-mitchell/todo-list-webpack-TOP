@@ -1,7 +1,7 @@
 /* footer */
 footer {
   grid-area: footer;
-
+  z-index: 3;
   background-color: var(--gray-9);
   font-size: var(--footer-font-size);
   padding: 2rem;

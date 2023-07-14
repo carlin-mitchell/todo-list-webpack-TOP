@@ -2,6 +2,20 @@ import { getProjectTodos } from "./todoDataManager";
 
 import Todo from "../components/Todos/Todo/Todo";
 
+import data from "./todoDataManager";
+
+export function displayInitialTodos(projectName = "default") {
+  const todosContainer = document.querySelector("#todos-container");
+
+  const projectTodos = getProjectTodos();
+
+  // initial todos fetched are not new and wont have the slide animation applied to them
+  projectTodos.forEach((todoObj) => {
+    const updatedTodoObj = data.updateProjectTodo({ isNew: false }, todoObj.id);
+    todosContainer.appendChild(Todo(updatedTodoObj));
+  });
+}
+
 /**
  *
  * @param {string} projectName the project name todos should be displayed for. If no value provided "default" is used.
@@ -9,7 +23,18 @@ import Todo from "../components/Todos/Todo/Todo";
 export function displayProjectTodos(projectName = "default") {
   const todosContainer = document.querySelector("#todos-container");
   const projectTodos = getProjectTodos(projectName);
-  projectTodos.forEach((todoObj) => todosContainer.appendChild(Todo(todoObj)));
+  console.log(projectTodos);
+  projectTodos.forEach((todoObj) => {
+    const todoElement = Todo(todoObj);
+
+    if (todoObj.isNew) {
+      todoElement.classList.add("slide-down");
+    }
+
+    todosContainer.appendChild(todoElement);
+
+    todoObj.isNew = false;
+  });
 }
 
 /**
@@ -32,7 +57,7 @@ export function clearProjectTodos() {
  */
 export function refreshProjectTodos(projectName = "default") {
   clearProjectTodos();
-  displayProjectTodos(projectName);
+  displayProjectTodos();
 }
 
 /**
@@ -43,4 +68,9 @@ export function clearInputValue(inputElement) {
   inputElement.value = "";
 }
 
-export default { displayProjectTodos, refreshProjectTodos, clearInputValue };
+export default {
+  displayInitialTodos,
+  displayProjectTodos,
+  refreshProjectTodos,
+  clearInputValue,
+};

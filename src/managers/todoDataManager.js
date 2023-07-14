@@ -66,9 +66,19 @@ export function removeTodoFromProject(todoId, projectName = "default") {
   return todoToRemove;
 }
 
+export function updateProjectTodo(updateObj, todoId, projectName = "default") {
+  const currentTodoObj = todoData.projects[projectName][todoId];
+  const updatedTodoObj = { ...currentTodoObj, ...updateObj };
+
+  todoData.projects[projectName][todoId] = updatedTodoObj;
+
+  return updatedTodoObj;
+}
+
 export default {
   removeTodoFromProject,
   getProjectTodo,
   getProjectTodos,
   addTodoToProject,
+  updateProjectTodo,
 };
