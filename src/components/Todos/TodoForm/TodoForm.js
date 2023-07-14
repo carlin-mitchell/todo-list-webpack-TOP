@@ -3,6 +3,8 @@ import Element from "../../Element";
 import PlusSignWhite from "../assets/plus-sign-white.png";
 import PlusSignGray9 from "../assets/plus-sign-gray-9.svg";
 
+import data from "../../../managers/todoDataManager";
+import ui from "../../../managers/uiManager";
 // DYNAMIC VARIABLES
 
 // LINK STRINGS
@@ -10,6 +12,12 @@ import PlusSignGray9 from "../assets/plus-sign-gray-9.svg";
 // METHODS
 const addTodo = (e) => {
   e.preventDefault();
+  const inputElement = document.querySelector("form input");
+  const { value: todoContent } = inputElement;
+
+  data.addTodoToProject("default", todoContent);
+  ui.clearInputValue(inputElement);
+  ui.refreshProjectTodos();
 };
 
 // COMPONENT
