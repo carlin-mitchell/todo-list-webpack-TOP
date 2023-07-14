@@ -30,7 +30,7 @@
     color: white;
   }
 
-  #todos {
-    padding: 25px;
+  #todos-container {
+    padding: 15px;
   }
 }
