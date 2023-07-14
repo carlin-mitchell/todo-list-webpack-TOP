@@ -1,5 +1,6 @@
 #todos-container {
   display: grid;
+  gap: var(--space-sm);
   grid-area: todos;
   padding: 45px 15%;
 }
@@ -73,10 +74,17 @@ button {
 .todo:last-child {
   border-radius: 0 0 var(--br-md) var(--br-md);
 }
-
+/* 
 .todo-item {
-  border-bottom: 1px solid var(--gray-9);
+  border-bottom: 2px solid var(--gray-9);
+} */
+/* .todo-item:first-child {
+  margin-top: 20px;
 }
+
+.todo-item:last-child {
+  border-bottom: none;
+} */
 
 #todo-form:only-child {
   border-radius: var(--br-md);
