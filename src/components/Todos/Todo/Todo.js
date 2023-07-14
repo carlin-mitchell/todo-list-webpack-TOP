@@ -15,17 +15,29 @@ function deleteTodo(todoId) {
   ui.refreshProjectTodos();
 }
 
+function toggleTodoCompletion(value, todoId) {
+  data.updateProjectTodo({ completed: value }, todoId);
+  ui.refreshProjectTodos();
+}
+
 // COMPONENT
 const Component = (todoObj) => {
-  const { id, content, dateCreated, completed } = todoObj;
+  const { id, content, dateCreated, completed, isNew } = todoObj;
 
   const parentContainer = Element("div", {
     id: id,
     // add the animation if the todo is new
-    className: `todo todo-item ${todoObj.isNew ? "slide-down" : ""}`,
+    className: `todo todo-item ${isNew ? "slide-down" : ""}`,
   });
 
-  const checkbox = Element("button", { innerText: "chk" });
+  const checkbox = Element("button", {
+    innerText: `${completed ? "✓" : ""}`,
+    className: `checkbox ${completed ? "checked" : ""}`,
+    onclick: function () {
+      const { completed, id } = todoObj;
+      toggleTodoCompletion(!completed, id);
+    },
+  });
 
   const deleteButton = Element("button", {
     onclick: function () {
@@ -35,13 +47,14 @@ const Component = (todoObj) => {
   const plusSign = Element("img", {
     src: PlusSignGray9,
     // add the animation if the todo is new, have it enter rotated already if not
-    className: `delete button ${todoObj.isNew ? "rotate45" : "rotated45"}`,
+    className: `delete button ${isNew ? "rotate45" : "rotated45"}`,
   });
 
   deleteButton.appendChild(plusSign);
 
   const todoContent = Element("div", {
     innerText: content,
+    className: `${completed ? "crossed-out" : ""}`,
   });
 
   parentContainer.appendChild(checkbox);

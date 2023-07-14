@@ -7,7 +7,7 @@ import data from "./todoDataManager";
 export function displayInitialTodos(projectName = "default") {
   const todosContainer = document.querySelector("#todos-container");
 
-  const projectTodos = getProjectTodos();
+  const projectTodos = getProjectTodos(projectName);
 
   // initial todos fetched are not new and wont have the slide animation applied to them
   projectTodos.forEach((todoObj) => {

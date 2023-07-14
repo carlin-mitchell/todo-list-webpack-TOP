@@ -1,7 +1,15 @@
 #side-bar {
   grid-area: sidebar;
+  display: grid;
+  padding: var(--space-lg);
+  justify-content: center;
+  align-items: center;
   background-color: var(--gray-3);
   z-index: 1;
+}
+
+.placeholder {
+  font-weight: bold;
 }
 
 .slide-down {

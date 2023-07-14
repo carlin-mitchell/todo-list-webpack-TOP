@@ -101,6 +101,21 @@ button {
   animation-fill-mode: forwards;
 }
 
+.crossed-out {
+  text-decoration: line-through;
+}
+
+.checkbox {
+  color: var(--gray-1);
+  border-radius: 100%;
+  padding: 2px 0 0 0;
+  font-size: 1.5rem;
+}
+
+.checked {
+  background-color: var(--gray-8);
+}
+
 @keyframes rotate45 {
   from {
     transform: rotate(0);

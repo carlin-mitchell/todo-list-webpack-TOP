@@ -9,5 +9,9 @@ import Content from "./components/Content/Content";
 
 document.body.appendChild(Content());
 
-initTestData();
+const testing = true;
+if (testing) {
+  initTestData();
+}
+
 ui.displayInitialTodos();

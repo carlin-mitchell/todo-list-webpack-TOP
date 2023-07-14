@@ -19,6 +19,15 @@ const SideBar = () => {
     id: "side-bar",
     className: "visible",
   });
+
+  const placeholder = Element("div", {
+    className: "placeholder",
+    innerText:
+      "This will be a menu one day. Click the menu button (if visible) to hide/show it.",
+  });
+
+  parentContainer.appendChild(placeholder);
+
   return parentContainer;
 };
 
