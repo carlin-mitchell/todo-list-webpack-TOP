@@ -18,6 +18,17 @@ export function getProjectTodos(projectName) {
 
 /**
  *
+ * @param {string} projectName the name of the project the related todo object i from
+ * @param {string} todoId the todo object's id
+ * @returns {object} todo object with the specified ID
+ */
+function getProjectTodo(projectName, todoId) {
+  const todo = todoData.projects[projectName][todoId];
+  return todo;
+}
+
+/**
+ *
  * @param {string} projectName the name of he project the todo will be added to
  * @param {string} todoContent content for the new todo object
  * @returns {object} the newTodoObject that was added to the project
@@ -41,3 +52,24 @@ export function addTodoToProject(projectName, todoContent) {
 
   return newTodo;
 }
+
+/**
+ *
+ * @param {string} projectName the name of he project the todo will be removed from
+ * @param {string} todoId the id of the Todo object to be removed
+ * @return {object} the todo object that was removed
+ */
+export function removeTodoFromProject(projectName, todoId) {
+  const todoToRemove = getProjectTodo(projectName, todoId);
+
+  delete todoData.projects[projectName][todoId];
+
+  return todoToRemove;
+}
+
+export default {
+  removeTodoFromProject,
+  getProjectTodo,
+  getProjectTodos,
+  addTodoToProject,
+};

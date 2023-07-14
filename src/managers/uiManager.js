@@ -28,7 +28,7 @@ function clearProjectTodos() {
 
 /**
  *
- * @param {*} projectName the project name todos should be displayed for if no value provided "default" is used
+ * @param {string} projectName the project name todos should be displayed for if no value provided "default" is used
  */
 function refreshProjectTodos(projectName) {
   projectName = projectName ? projectName : "default";
