@@ -96,8 +96,8 @@ button {
 
 .rotate45 {
   animation-name: rotate45;
-  animation-delay: 0.2s;
-  animation-duration: 0.8s;
+  animation-delay: 1s;
+  animation-duration: 0.2s;
   animation-fill-mode: forwards;
 }
 

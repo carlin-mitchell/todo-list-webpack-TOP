@@ -4,7 +4,7 @@ import Element from "../Element";
 
 // LINK STRINGS
 
-// ANIMATION METHODS
+// ELEMENT METHODS
 
 // COMPONENT
 const Component = () => {

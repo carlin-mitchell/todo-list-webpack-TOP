@@ -1,11 +1,5 @@
 import Element from "../../Element";
 
-// DYNAMIC VARIABLES
-
-// LINK STRINGS
-
-// ANIMATION METHODS
-
 // COMPONENT
 const SiteTitle = () => {
   const parentContainer = Element("div", {

@@ -1,10 +1,6 @@
 import Element from "../../Element";
 import MenuIconSrc from "./assets/menu-white.png";
 
-// DYNAMIC VARIABLES
-
-// LINK STRINGS
-
 // ANIMATION METHODS
 function toggleSidebar() {
   const sideBar = document.querySelector("#side-bar");

@@ -13,7 +13,6 @@ export function saveDataToLocalStorage() {
 export function getDataFromLocalStorage() {
   const data = window.localStorage.getItem("todoAppData");
 
-  console.log(todoData);
   if (data) {
     todoData = JSON.parse(data);
     console.log(todoData);
@@ -26,6 +25,7 @@ export function getDataFromLocalStorage() {
  * @returns {array} an array of todo objects from the associated project name
  */
 export function getProjectTodos(projectName = "default") {
+  getDataFromLocalStorage();
   const projectTodos = todoData.projects[projectName];
   return Object.values(projectTodos);
 }
@@ -62,7 +62,7 @@ export function addTodoToProject(todoContent, projectName = "default") {
 
   // add the new todo to the project
   todoData.projects[projectName] = { ...currentProjectTodos, [id]: newTodo };
-
+  saveDataToLocalStorage();
   return newTodo;
 }
 
@@ -76,7 +76,7 @@ export function removeTodoFromProject(todoId, projectName = "default") {
   const todoToRemove = getProjectTodo(todoId, projectName);
 
   delete todoData.projects[projectName][todoId];
-
+  saveDataToLocalStorage();
   return todoToRemove;
 }
 
@@ -92,13 +92,12 @@ export function updateProjectTodo(updateObj, todoId, projectName = "default") {
   const updatedTodoObj = { ...currentTodoObj, ...updateObj };
 
   todoData.projects[projectName][todoId] = updatedTodoObj;
-
+  saveDataToLocalStorage();
   return updatedTodoObj;
 }
 
 export default {
   removeTodoFromProject,
-  getProjectTodo,
   getProjectTodos,
   addTodoToProject,
   updateProjectTodo,

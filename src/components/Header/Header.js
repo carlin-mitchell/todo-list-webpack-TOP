@@ -1,16 +1,7 @@
 import Element from "../Element";
-
 import SiteIcon from "./SiteIcon/SiteIcon";
-
 import SiteTitle from "./SiteTitle/SiteTitle";
-
 import MenuIcon from "./MenuIcon/MenuIcon";
-
-// DYNAMIC VARIABLES
-
-// LINK STRINGS
-
-// ANIMATION METHODS
 
 // COMPONENT
 const Component = () => {
