@@ -103,13 +103,22 @@ button {
 
 .crossed-out {
   text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--gray-8);
 }
 
 .checkbox {
   color: var(--gray-1);
+  background-color: transparent;
   border-radius: 100%;
+  border-color: var(--gray-8);
   padding: 2px 0 0 0;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.checkbox:hover:not(.checked) {
+  background-color: var(--gray-5);
 }
 
 .checked {
