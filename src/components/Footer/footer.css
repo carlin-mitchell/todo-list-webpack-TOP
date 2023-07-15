@@ -16,6 +16,13 @@ footer img {
 footer a {
   margin-left: var(--marginSpace);
 }
+#top-link:visited {
+  color: var(--links);
+}
+
+#top-link:visited {
+  color: var(--links);
+}
 
 #top-link:hover {
   font-weight: bolder !important;
@@ -23,14 +30,6 @@ footer a {
 
 footer img:active {
   scale: 1;
-}
-
-#top-link:visited {
-  color: var(--links);
-}
-
-#top-link:visited {
-  color: var(--links);
 }
 
 /* ANIMATIONS */
