@@ -125,6 +125,10 @@ button {
   background-color: var(--gray-8);
 }
 
+.unchecked {
+  background-color: transparent;
+}
+
 @keyframes rotate45 {
   from {
     transform: rotate(0);

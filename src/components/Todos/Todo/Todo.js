@@ -32,7 +32,7 @@ const Component = (todoObj) => {
 
   const checkbox = Element("button", {
     innerText: `${completed ? "✓" : ""}`,
-    className: `checkbox ${completed ? "checked" : ""}`,
+    className: `checkbox ${completed ? "checked" : "unchecked"}`,
     onclick: function () {
       const { completed, id } = todoObj;
       toggleTodoCompletion(!completed, id);
