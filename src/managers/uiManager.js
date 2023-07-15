@@ -30,7 +30,9 @@ export function displayProjectTodos(projectName = "default") {
   projectTodos.forEach((todoObj) => {
     const todoElement = Todo(todoObj);
     todosContainer.appendChild(todoElement);
-    data.updateProjectTodo({ isNew: false }, todoObj.id);
+    if (todoObj.isNew) {
+      data.updateProjectTodo({ isNew: false }, todoObj.id);
+    }
   });
 }
 
