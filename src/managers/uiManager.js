@@ -15,7 +15,7 @@ export function displayInitialTodos(projectName = "default") {
 
   // initial todos fetched are not new and wont have the new todo animations applied to them
   projectTodos.forEach((todoObj) => {
-    const updatedTodoObj = data.updateProjectTodo({ isNew: false }, todoObj.id);
+    const updatedTodoObj = data.updateProjectTodo({}, todoObj.id);
     todosContainer.appendChild(Todo(updatedTodoObj));
   });
 }
@@ -27,13 +27,10 @@ export function displayInitialTodos(projectName = "default") {
 export function displayProjectTodos(projectName = "default") {
   const todosContainer = document.querySelector("#todos-container");
   const projectTodos = getProjectTodos(projectName);
-  console.log(projectTodos);
   projectTodos.forEach((todoObj) => {
     const todoElement = Todo(todoObj);
-
     todosContainer.appendChild(todoElement);
-
-    todoObj.isNew = false;
+    data.updateProjectTodo({ isNew: false }, todoObj.id);
   });
 }
 

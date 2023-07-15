@@ -15,4 +15,4 @@ if (testing) {
   if (data.getProjectTodos().length === 0) initTestData();
 }
 
-ui.displayInitialTodos();
+ui.displayProjectTodos();
