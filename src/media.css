@@ -1,7 +1,7 @@
 @media only screen and (max-width: 800px) {
   #content {
     grid-template-columns: var(--sidebar-width) 1fr;
-    grid-template-rows: 5rem 1fr 2fr max-content;
+    grid-template-rows: 5rem max-content 1fr max-content;
     grid-template-areas:
       "header header"
       "sidebar sidebar"

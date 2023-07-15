@@ -2,9 +2,10 @@
 @import url("./components/Content/Content.css");
 @import url("./components/Header/Header.css");
 @import url("./components/SideBar/SideBar.css");
-@import url("./components/Main/main.css");
-@import url("./components/Todos/todos.css");
-@import url("./components/Footer/footer.css");
+@import url("./components/Main/Main.css");
+@import url("./components/Todos/Todos.css");
+@import url("./components/Footer/Footer.css");
+
 * {
   box-sizing: border-box;
   margin: 0;

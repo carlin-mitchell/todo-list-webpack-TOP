@@ -1,22 +1,7 @@
 import Element from "../../Element";
 import MenuIconSrc from "./assets/menu-white.png";
 
-// ANIMATION METHODS
-function toggleSidebar() {
-  const sideBar = document.querySelector("#side-bar");
-
-  if (sideBar.classList[0] === "visible") {
-    sideBar.className = "slide-up";
-  } else if (sideBar.classList.contains("slide-up")) {
-    sideBar.classList.remove("slide-up");
-    sideBar.classList.add("slide-down");
-  } else if (sideBar.classList.contains("slide-down")) {
-    sideBar.classList.remove("slide-down");
-    sideBar.classList.add("slide-up");
-  }
-
-  return;
-}
+import ui from "../../../managers/uiManager";
 
 // COMPONENT
 const MenuIcon = () => {
@@ -24,7 +9,7 @@ const MenuIcon = () => {
     id: "menu-icon",
     classList: "hidden",
     src: MenuIconSrc,
-    onclick: toggleSidebar,
+    onclick: ui.toggleSidebar,
   });
   return icon;
 };

@@ -68,9 +68,41 @@ export function clearInputValue(inputElement) {
   inputElement.value = "";
 }
 
+export function toggleSidebar() {
+  const sideBar = document.querySelector("#side-bar");
+
+  if (sideBar.classList.contains("hidden")) {
+    sideBar.className = "slide-down";
+  } else if (sideBar.classList.contains("slide-up")) {
+    sideBar.classList.remove("slide-up");
+    sideBar.classList.add("slide-down");
+  } else if (
+    sideBar.classList.contains("slide-down") ||
+    sideBar.classList.contains("visible")
+  ) {
+    sideBar.classList.remove("slide-down");
+    sideBar.classList.add("slide-up");
+  }
+
+  return;
+}
+
+// WINDOW EVENTS
+
+// Reposition the side bar when the window's width crossed the specified threshold
+window.onresize = (e) => {
+  const { innerWidth } = e.target;
+  if (innerWidth >= 800) {
+    console.log("test");
+    const sideBar = document.querySelector("#side-bar");
+    sideBar.className = "visible";
+  }
+};
+
 export default {
   displayInitialTodos,
   displayProjectTodos,
   refreshProjectTodos,
   clearInputValue,
+  toggleSidebar,
 };

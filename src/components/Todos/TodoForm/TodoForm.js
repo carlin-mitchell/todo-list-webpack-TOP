@@ -1,6 +1,5 @@
 import Element from "../../Element";
 
-import PlusSignWhite from "../assets/plus-sign-white.png";
 import PlusSignGray9 from "../assets/plus-sign-gray-9.svg";
 
 import data from "../../../managers/todoDataManager";

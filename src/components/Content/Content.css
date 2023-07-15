@@ -1,5 +1,5 @@
 #content {
-  min-height: 100%;
+  min-height: 115%;
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
   grid-template-rows: 5rem 1fr max-content;

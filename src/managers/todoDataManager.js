@@ -15,7 +15,6 @@ export function getDataFromLocalStorage() {
 
   if (data) {
     todoData = JSON.parse(data);
-    console.log(todoData);
   }
 }
 
