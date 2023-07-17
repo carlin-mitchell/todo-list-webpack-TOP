@@ -12,10 +12,12 @@ import ui from "../../../managers/uiManager";
 const addTodo = (e) => {
   e.preventDefault();
   const inputElement = document.querySelector("form input");
+  const prioritySelector = document.querySelector("form select");
   const { value: todoContent } = inputElement;
-
+  const { value: todoPriority } = prioritySelector;
+  const newTodoData = { todoContent, todoPriority };
   if (todoContent) {
-    data.addTodoToProject(todoContent);
+    data.addTodoToProject(newTodoData);
     ui.clearInputValue(inputElement);
     ui.refreshProjectTodos();
   }
@@ -25,25 +27,48 @@ const addTodo = (e) => {
 const TodoForm = () => {
   const parentContainer = Element("form", {
     id: "todo-form",
-    className: "todo",
+    className: "",
   });
 
   const input = Element("input", {
     type: "text",
   });
 
-  const addButton = Element("button", {
-    onclick: function (e) {
-      addTodo(e);
+  const optionsText = ["normal", "medium", "high"];
+  const prioritySelector = Element(
+    "select",
+    {
+      id: "priority-selector",
     },
-  });
+    optionsText.map((option, i) => {
+      let attrs = {
+        className: "priority-option",
+        innerText: `${option}`,
+      };
+      if (i === 0) {
+        attrs["selected"] = true;
+      }
 
-  const plusSign = Element("img", {
-    src: PlusSignGray9,
-  });
+      return Element("option", attrs);
+    })
+  );
 
-  addButton.appendChild(plusSign);
+  const addButton = Element(
+    "button",
+    {
+      onclick: function (e) {
+        addTodo(e);
+      },
+    },
+    [
+      Element("img", {
+        src: PlusSignGray9,
+      }),
+    ]
+  );
+
   parentContainer.appendChild(input);
+  parentContainer.appendChild(prioritySelector);
   parentContainer.appendChild(addButton);
 
   return parentContainer;

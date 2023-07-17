@@ -22,7 +22,7 @@ function toggleTodoCompletion(value, todoId) {
 
 // COMPONENT
 const Component = (todoObj) => {
-  const { id, content, dateCreated, completed, isNew } = todoObj;
+  const { id, content, dateCreated, completed, isNew, priority } = todoObj;
 
   const parentContainer = Element("div", {
     id: id,
@@ -50,7 +50,7 @@ const Component = (todoObj) => {
     className: `delete button ${isNew ? "rotate45" : "rotated45"}`,
   });
 
-  deleteButton.appendChild(plusSign);
+  const todoPriority = Element("div", { innerText: `${priority}` });
 
   const todoContent = Element("div", {
     innerText: content,
@@ -59,7 +59,9 @@ const Component = (todoObj) => {
 
   parentContainer.appendChild(checkbox);
   parentContainer.appendChild(todoContent);
+  parentContainer.appendChild(todoPriority);
   parentContainer.appendChild(deleteButton);
+  deleteButton.appendChild(plusSign);
 
   return parentContainer;
 };

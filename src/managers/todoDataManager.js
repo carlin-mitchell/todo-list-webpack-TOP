@@ -43,10 +43,12 @@ function getProjectTodo(todoId, projectName = "default") {
 /**
  *
  * @param {string} projectName the name of he project the todo will be added to. If no value provided "default" is used.
- * @param {string} todoContent content for the new todo object
+ * @param {object} todoData an object containing data from th todo creation form
  * @returns {object} the newTodoObject that was added to the project
  */
-export function addTodoToProject(todoContent, projectName = "default") {
+export function addTodoToProject(newTodoData, projectName = "default") {
+  const { todoContent, todoPriority } = newTodoData;
+
   //get the current todos in the project
   const currentProjectTodos = todoData.projects[projectName];
   // create a new todo object its key and id will be the same value
@@ -57,6 +59,7 @@ export function addTodoToProject(todoContent, projectName = "default") {
     dateCreated: new Date(),
     isComplete: false,
     isNew: true,
+    priority: todoPriority,
   };
 
   // add the new todo to the project
