@@ -37,6 +37,17 @@ export function displayProjectTodos(projectName = "default") {
 }
 
 /**
+ * This function removes all buy the first n childNodes from the inputted element
+ * @param {Element} parentElement The element to remove child nodes from.
+ * @param {int} n The number of leading child nodes to preserve. If no value is provided all child nodes will be removed.
+ */
+export function removeAllButFirstNChildren(parentElement, n = 0) {
+  while (parentElement.childNodes.length > n) {
+    parentElement.removeChild(parentElement.lastChild);
+  }
+}
+
+/**
  *
  * @param {string} projectName the project name todos should be displayed for. If no value provided "default" is used.
  */
@@ -45,9 +56,7 @@ export function clearProjectTodos(projectName = "default") {
   if (!todosContainer.childNodes.length > 1) return;
 
   //remove all elements in the todos container except for the form
-  while (todosContainer.childNodes.length > 1) {
-    todosContainer.removeChild(todosContainer.lastChild);
-  }
+  removeAllButFirstNChildren(todosContainer, 1);
 }
 
 /**
@@ -65,6 +74,16 @@ export function refreshProjectTodos(projectName = "default") {
  */
 export function clearInputValue(inputElement) {
   inputElement.value = "";
+}
+
+/**
+ * This function resets the value of an inputted select element to the index of the option provided
+ * @param {Element} selectorElement the selector element to edit
+ * @param {int} selectedOptionIndex the index of the option to be set as selected
+ */
+export function setSelectorElementValue(selectorElement, selectedOptionIndex) {
+  selectorElement.value =
+    selectorElement.childNodes[selectedOptionIndex].innerText;
 }
 
 export function toggleSidebar() {
@@ -103,5 +122,6 @@ export default {
   displayProjectTodos,
   refreshProjectTodos,
   clearInputValue,
+  setSelectorElementValue,
   toggleSidebar,
 };

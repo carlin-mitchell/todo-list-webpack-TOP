@@ -50,7 +50,9 @@ const Component = (todoObj) => {
     className: `delete button ${isNew ? "rotate45" : "rotated45"}`,
   });
 
-  const todoPriority = Element("div", { innerText: `${priority}` });
+  const todoPriority = Element("div", {
+    innerText: `${priority === "none" ? "" : priority}`,
+  });
 
   const todoContent = Element("div", {
     innerText: content,

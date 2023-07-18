@@ -19,6 +19,7 @@ const addTodo = (e) => {
   if (todoContent) {
     data.addTodoToProject(newTodoData);
     ui.clearInputValue(inputElement);
+    ui.setSelectorElementValue(prioritySelector, 0);
     ui.refreshProjectTodos();
   }
 };
@@ -34,7 +35,7 @@ const TodoForm = () => {
     type: "text",
   });
 
-  const optionsText = ["normal", "medium", "high"];
+  const optionsText = ["none", "!", "!!", "!!!"];
   const prioritySelector = Element(
     "select",
     {
@@ -43,7 +44,7 @@ const TodoForm = () => {
     optionsText.map((option, i) => {
       let attrs = {
         className: "priority-option",
-        innerText: `${option}`,
+        innerText: option,
       };
       if (i === 0) {
         attrs["selected"] = true;
