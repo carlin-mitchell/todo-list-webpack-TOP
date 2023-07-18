@@ -15,7 +15,7 @@
 #todo-form {
   display: grid;
   gap: 25px;
-  grid-template-columns: 5fr 1fr 1fr;
+  grid-template-columns: 1fr 2.5rem 3rem;
   align-content: center;
   background-color: var(--gray-4);
 }
@@ -27,6 +27,7 @@ select {
   border-radius: var(--br-sm);
   display: block;
   align-self: end;
+  justify-self: end;
 }
 
 .todo button,
@@ -38,7 +39,7 @@ select {
   height: 2rem;
   aspect-ratio: 1;
   justify-self: end;
-  align-self: center;
+  align-self: end;
   font: 1em sans-serif;
 }
 

@@ -8,8 +8,8 @@ import Element from "../Element";
 
 // COMPONENT
 const Component = () => {
-  const parentContainer = Element("div", {});
-  return parentContainer;
+  const parentElement = Element("div", {});
+  return parentElement;
 };
 
 export default Component;
