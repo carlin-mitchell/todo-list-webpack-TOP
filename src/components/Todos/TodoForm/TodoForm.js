@@ -31,27 +31,49 @@ const TodoForm = () => {
     className: "",
   });
 
-  const input = Element("input", {
-    type: "text",
-  });
+  const input = Element(
+    "div",
+    {
+      className: "label",
+      innerText: "Title",
+    },
+    [
+      Element("input", {
+        type: "text",
+      }),
+    ]
+  );
+
+  // const input = Element("input", {
+  //   type: "text",
+  // });
 
   const optionsText = ["none", "!", "!!", "!!!"];
   const prioritySelector = Element(
-    "select",
+    "div",
     {
-      id: "priority-selector",
+      className: "label",
+      innerText: "Priority",
     },
-    optionsText.map((option, i) => {
-      let attrs = {
-        className: "priority-option",
-        innerText: option,
-      };
-      if (i === 0) {
-        attrs["selected"] = true;
-      }
+    [
+      Element(
+        "select",
+        {
+          id: "priority-selector",
+        },
+        optionsText.map((option, i) => {
+          let attrs = {
+            className: "priority-option",
+            innerText: option,
+          };
+          if (i === 0) {
+            attrs["selected"] = true;
+          }
 
-      return Element("option", attrs);
-    })
+          return Element("option", attrs);
+        })
+      ),
+    ]
   );
 
   const addButton = Element(

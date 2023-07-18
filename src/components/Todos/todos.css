@@ -25,6 +25,8 @@ button,
 select {
   border: 2px solid var(--gray-9);
   border-radius: var(--br-sm);
+  display: block;
+  align-self: end;
 }
 
 .todo button,
@@ -36,6 +38,8 @@ select {
   height: 2rem;
   aspect-ratio: 1;
   justify-self: end;
+  align-self: center;
+  font: 1em sans-serif;
 }
 
 button :hover {
@@ -52,7 +56,8 @@ button :hover {
   height: 1.5rem;
 }
 
-.todo input {
+#todo-form input,
+select {
   width: 100%;
   border-radius: var(--br-sm);
   font-size: 1rem;
@@ -120,8 +125,13 @@ button :hover {
   cursor: pointer;
 }
 
-select {
-  text-align: center;
+select,
+input {
+  height: 2rem;
+}
+
+.label {
+  font-size: 0.75rem;
 }
 
 /* .checkbox:hover:not(.checked) {

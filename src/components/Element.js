@@ -6,6 +6,10 @@
  * @returns {Element} the a reference to the element created in memory
  */
 const Element = (typeStr, propsObj, childArr = null) => {
+  if (childArr && !Array.isArray(childArr)) {
+    childArr = [childArr];
+  }
+
   const parentElement = Object.assign(
     document.createElement(typeStr),
     propsObj
