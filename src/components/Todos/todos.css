@@ -83,17 +83,6 @@ select {
 .todo:last-child {
   border-radius: 0 0 var(--br-md) var(--br-md);
 }
-/* 
-.todo-item {
-  border-bottom: 2px solid var(--gray-9);
-} */
-/* .todo-item:first-child {
-  margin-top: 20px;
-}
-
-.todo-item:last-child {
-  border-bottom: none;
-} */
 
 #todo-form:only-child {
   border-radius: var(--br-md);
@@ -134,10 +123,6 @@ input {
 .label {
   font-size: 0.75rem;
 }
-
-/* .checkbox:hover:not(.checked) {
-  background-color: var(--gray-5);
-} */
 
 .checked {
   background-color: var(--gray-8);
