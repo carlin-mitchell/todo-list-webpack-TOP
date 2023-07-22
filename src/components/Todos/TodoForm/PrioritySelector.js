@@ -21,10 +21,7 @@ const PrioritySelector = () => {
       className: "priority-option",
     };
 
-    return Element(
-      "option",
-      i === 0 ? { ...baseAttrs, selected: true, disabled: true } : baseAttrs
-    );
+    return Element("option", baseAttrs);
   });
 
   optionElements.forEach((option) => select.append(option));
