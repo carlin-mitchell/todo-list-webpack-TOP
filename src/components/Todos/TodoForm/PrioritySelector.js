@@ -15,14 +15,12 @@ const PrioritySelector = () => {
     id: "priority-selector",
   });
 
-  const optionElements = optionsText.map((option, i) => {
-    const baseAttrs = {
+  const optionElements = optionsText.map((option, i) =>
+    Element("option", {
       innerText: option,
       className: "priority-option",
-    };
-
-    return Element("option", baseAttrs);
-  });
+    })
+  );
 
   optionElements.forEach((option) => select.append(option));
 
