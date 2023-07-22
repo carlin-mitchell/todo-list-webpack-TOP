@@ -10,11 +10,12 @@ import Element from "../../Element";
 const TitleInput = () => {
   const parentElement = Element("div", {
     className: "label",
-    innerText: "Title",
+    innerText: "",
   });
 
   const input = Element("input", {
     type: "text",
+    placeholder: "Task title",
   });
 
   parentElement.appendChild(input);

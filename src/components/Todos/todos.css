@@ -15,7 +15,7 @@
 #todo-form {
   display: grid;
   gap: 25px;
-  grid-template-columns: 1fr 2.5rem 3rem;
+  grid-template-columns: 1fr 6rem 3rem;
   align-content: center;
   background-color: var(--gray-4);
 }
@@ -120,6 +120,10 @@ input {
   height: 2rem;
 }
 
+::placeholder,
+select {
+  color: var(--gray-6);
+}
 .label {
   font-size: 0.75rem;
 }

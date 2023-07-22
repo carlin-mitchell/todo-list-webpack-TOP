@@ -59,7 +59,7 @@ export function addTodoToProject(newTodoData, projectName = "default") {
     dateCreated: new Date(),
     isComplete: false,
     isNew: true,
-    priority: todoPriority,
+    priority: todoPriority.includes("!") ? todoPriority : "",
   };
 
   // add the new todo to the project

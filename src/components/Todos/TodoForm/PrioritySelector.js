@@ -2,23 +2,30 @@ import Element from "../../Element";
 
 import ui from "../../../managers/uiManager";
 // OPTIONS
-const optionsText = ["", "!", "!!", "!!!"];
+const optionsText = ["Priority", "!", "!!", "!!!"];
 
 // COMPONENT
 const PrioritySelector = () => {
   const parentContainer = Element("div", {
     className: "label",
-    innerText: "Priority",
+    innerText: "",
   });
 
-  const select = Element("select", { id: "priority-selector" });
+  const select = Element("select", {
+    id: "priority-selector",
+  });
 
-  const optionElements = optionsText.map((option) =>
-    Element("option", {
+  const optionElements = optionsText.map((option, i) => {
+    const baseAttrs = {
       innerText: option,
       className: "priority-option",
-    })
-  );
+    };
+
+    return Element(
+      "option",
+      i === 0 ? { ...baseAttrs, selected: true, disabled: true } : baseAttrs
+    );
+  });
 
   optionElements.forEach((option) => select.append(option));
 
