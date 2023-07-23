@@ -1,6 +1,8 @@
 import Element from "../../Element";
 import PrioritySelector from "./PrioritySelector";
 import TitleInput from "./TitleInput";
+import DueDateAndTimeInput from "./DueDateAndTime";
+import DetailsInput from "./DetailsInput";
 
 import AddButton from "./AddButton";
 
@@ -16,8 +18,10 @@ const TodoForm = () => {
   });
 
   parentContainer.appendChild(TitleInput());
-  parentContainer.appendChild(PrioritySelector());
+  parentContainer.appendChild(DueDateAndTimeInput());
   parentContainer.appendChild(AddButton());
+  parentContainer.appendChild(DetailsInput());
+  parentContainer.appendChild(PrioritySelector());
 
   return parentContainer;
 };
