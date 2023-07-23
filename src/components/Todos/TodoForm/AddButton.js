@@ -27,6 +27,7 @@ const addTodo = (e) => {
 // COMPONENT
 const AddButton = () => {
   const button = Element("button", {
+    id: "add-button",
     onclick: function (e) {
       addTodo(e);
     },

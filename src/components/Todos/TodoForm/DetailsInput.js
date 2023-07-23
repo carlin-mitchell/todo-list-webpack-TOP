@@ -9,7 +9,7 @@ const textAreaPlaceholder = "Todo details...";
 
 // COMPONENT
 const DetailsInput = () => {
-  const parentElement = Element("div", {});
+  const parentElement = Element("div", { id: "details-input" });
   const input = Element("textarea", {
     placeholder: textAreaPlaceholder,
   });

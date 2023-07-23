@@ -105,6 +105,22 @@ export function toggleSidebar() {
   return;
 }
 
+export function showDateTimeInput() {
+  const dateTimeWrapper = document.querySelector("#dateTimeInput-wrapper");
+  const dueDatePrompt = document.querySelector("#deadline-prompt");
+
+  dueDatePrompt.classList.add("display-none");
+  dateTimeWrapper.classList.remove("display-none");
+}
+
+export function hideDateTimeInput() {
+  const dateTimeWrapper = document.querySelector("#dateTimeInput-wrapper");
+  const dueDatePrompt = document.querySelector("#deadline-prompt");
+
+  dateTimeWrapper.classList.add("display-none");
+  dueDatePrompt.classList.remove("display-none");
+}
+
 // WINDOW EVENTS
 
 // Reposition the side bar when the window's width crossed the specified threshold
@@ -121,6 +137,8 @@ export default {
   displayInitialTodos,
   displayProjectTodos,
   refreshProjectTodos,
+  showDateTimeInput,
+  hideDateTimeInput,
   clearInputValue,
   setSelectorElementValue,
   toggleSidebar,

@@ -9,11 +9,10 @@ const PrioritySelector = () => {
   const parentContainer = Element("div", {
     className: "label",
     innerText: "",
-  });
-
-  const select = Element("select", {
     id: "priority-selector",
   });
+
+  const select = Element("select", {});
 
   const optionElements = optionsText.map((option, i) =>
     Element("option", {

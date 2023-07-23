@@ -9,6 +9,7 @@ import Element from "../../Element";
 // COMPONENT
 const TitleInput = () => {
   const parentElement = Element("div", {
+    id: "title-input",
     className: "label",
     innerText: "",
   });
