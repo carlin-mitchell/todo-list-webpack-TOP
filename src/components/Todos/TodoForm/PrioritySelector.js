@@ -5,19 +5,22 @@ import ui from "../../../managers/uiManager";
 const optionsText = ["Priority", "!", "!!", "!!!"];
 
 // COMPONENT
+
 const PrioritySelector = () => {
   const parentContainer = Element("div", {
     className: "label",
     innerText: "",
-    id: "priority-selector",
+    id: `priority-selector`,
   });
 
-  const select = Element("select", {});
+  const select = Element("select", {
+    className: `${"display-none"}`,
+  });
 
   const optionElements = optionsText.map((option, i) =>
     Element("option", {
       innerText: option,
-      className: "priority-option",
+      className: `priority-option `,
     })
   );
 

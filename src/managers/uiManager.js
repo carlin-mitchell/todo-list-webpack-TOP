@@ -1,8 +1,17 @@
 import { getProjectTodos } from "./todoDataManager";
 
 import Todo from "../components/Todos/Todo/Todo";
+import TodoForm from "../components/Todos/TodoForm/TodoForm";
 
 import data from "./todoDataManager";
+
+import { debounce } from "../utils";
+
+// COMPONENT STATE
+let formIsExpanded = false;
+
+const getFormIsExpanded = () => formIsExpanded;
+const setFormIsExpanded = (state) => (formIsExpanded = state);
 
 /**
  * Similar to displayInitialTodos() but this function ensures the displayed todos are not marked as new
@@ -124,14 +133,15 @@ export function hideDateTimeInput() {
 // WINDOW EVENTS
 
 // Reposition the side bar when the window's width crossed the specified threshold
-window.onresize = (e) => {
+window.onresize = debounce((e) => {
   const { innerWidth } = e.target;
   if (innerWidth >= 800) {
-    console.log("test");
     const sideBar = document.querySelector("#side-bar");
     sideBar.className = "visible";
   }
-};
+});
+
+function refreshTodoForm() {}
 
 export default {
   displayInitialTodos,
@@ -142,4 +152,7 @@ export default {
   clearInputValue,
   setSelectorElementValue,
   toggleSidebar,
+
+  getFormIsExpanded,
+  setFormIsExpanded,
 };

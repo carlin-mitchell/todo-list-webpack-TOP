@@ -56,7 +56,7 @@ const Component = (todoObj) => {
 
   const todoContent = Element("div", {
     innerText: content,
-    className: `${completed ? "crossed-out" : ""}`,
+    className: `${completed ? "crossed-out" : ""} todo-content`,
   });
 
   parentContainer.appendChild(checkbox);
