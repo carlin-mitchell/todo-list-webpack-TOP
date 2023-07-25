@@ -3,18 +3,16 @@ import ui from "../../../managers/uiManager";
 
 function toggleAdditionalInputs() {
   const formIsExpanded = ui.getFormIsExpanded();
-  const details = document.querySelector("#details-input");
-  const prioritySelector = document.querySelector("#priority-selector");
+  const formRow3 = document.querySelector("#form-row-3");
+  const baseText = this.innerText.slice(0, -1);
+  console.log(formIsExpanded);
   if (formIsExpanded) {
-    this.innerText = "add details/priority -";
-    prioritySelector.classList.remove("display-none");
-    details.classList.remove("display-none");
-    console.log(details, prioritySelector);
+    this.innerText = `${baseText} +`;
+    formRow3.classList.toggle("display-none");
   } else {
-    this.innerText = "add details/priority +";
-    console.log(details, prioritySelector);
-    prioritySelector.classList.add("display-none");
-    details.classList.add("display-none");
+    this.innerText = `${baseText} -`;
+    formRow3.classList.toggle("display-grid");
+    formRow3.classList.toggle("display-none");
   }
 
   ui.setFormIsExpanded(!formIsExpanded);
@@ -23,7 +21,7 @@ function toggleAdditionalInputs() {
 // COMPONENT
 const ShowHideAdditionalInputsButton = () => {
   const parentElement = Element("div", {
-    innerText: "add details/priority +",
+    innerText: "add details & priority +",
     className: "toggle-text",
     onclick: toggleAdditionalInputs,
   });

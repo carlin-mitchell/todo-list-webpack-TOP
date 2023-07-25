@@ -39,6 +39,18 @@ body {
   display: none !important;
 }
 
+.display-reset {
+  display: "" !important;
+}
+
+.display-grid {
+  display: grid;
+}
+
+.display-block {
+  display: block !important;
+}
+
 input {
   -webkit-user-select: text;
 }

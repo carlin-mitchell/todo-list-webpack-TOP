@@ -14,7 +14,7 @@ const PrioritySelector = () => {
   });
 
   const select = Element("select", {
-    className: `${"display-none"}`,
+    className: ``,
   });
 
   const optionElements = optionsText.map((option, i) =>

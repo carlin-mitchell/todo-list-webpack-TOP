@@ -14,7 +14,7 @@ const DetailsInput = () => {
   const parentElement = Element("div", { id: "details-input" });
   const input = Element("textarea", {
     placeholder: textAreaPlaceholder,
-    className: `${ui.getFormIsExpanded() ? "" : "display-none"}`,
+    className: "",
     id: "details-input",
   });
   parentElement.appendChild(input);
