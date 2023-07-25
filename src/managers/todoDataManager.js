@@ -47,7 +47,7 @@ function getProjectTodo(todoId, projectName = "default") {
  * @returns {object} the newTodoObject that was added to the project
  */
 export function addTodoToProject(newTodoData, projectName = "default") {
-  const { todoContent, todoPriority } = newTodoData;
+  const { todoContent, todoPriority, due } = newTodoData;
 
   //get the current todos in the project
   const currentProjectTodos = todoData.projects[projectName];
@@ -57,6 +57,7 @@ export function addTodoToProject(newTodoData, projectName = "default") {
     id: id,
     content: todoContent,
     dateCreated: new Date(),
+    due,
     isComplete: false,
     isNew: true,
     priority: todoPriority.includes("!") ? todoPriority : "",

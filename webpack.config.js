@@ -32,6 +32,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "todo list",
+      cache: false,
     }),
   ],
   optimization: {

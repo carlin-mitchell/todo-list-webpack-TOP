@@ -13,11 +13,13 @@ const addTodo = (e) => {
   e.preventDefault();
   const inputElement = document.querySelector("form input");
   const prioritySelector = document.querySelector("form select");
+  const dateTimeSelector = document.querySelector("#deadline-input");
   const { value: todoContent } = inputElement;
   const { value: todoPriority } = prioritySelector;
-  const newTodoData = { todoContent, todoPriority };
+  const { value: due } = dateTimeSelector;
+  const newTodoData = { todoContent, todoPriority, due };
   if (todoContent) {
-    data.addTodoToProject(newTodoData);
+    console.log(data.addTodoToProject(newTodoData));
     ui.clearInputValue(inputElement);
     ui.setSelectorElementValue(prioritySelector, 0);
     ui.refreshProjectTodos();

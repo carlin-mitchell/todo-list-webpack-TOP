@@ -29,6 +29,7 @@ const DueDateAndTimeInput = () => {
     Element("img", { src: PlusSignGray9 })
   );
   const dateTimeInput = Element("input", {
+    id: "deadline-input",
     type: "datetime-local",
     value: "",
   });

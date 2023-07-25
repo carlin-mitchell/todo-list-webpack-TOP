@@ -82,15 +82,13 @@ textarea {
   padding: 3px;
 }
 
-.todo div {
-  padding: 0 25px;
-}
-
 .todo-item {
+  width: 100%;
   display: grid;
-  grid-template-columns: 3rem 1fr 3rem auto;
-  justify-content: center;
+  grid-template-columns: auto 1fr 3rem;
+  justify-content: start;
   align-items: center;
+  column-gap: var(--space-md);
 }
 
 #todo-form:first-child {
@@ -123,13 +121,13 @@ textarea {
 }
 
 .checkbox {
-  color: var(--gray-1);
   background-color: transparent;
   border-radius: 100%;
   border-color: var(--gray-8);
   padding: 2px 0 0 0;
   font-size: 1.5rem;
   cursor: pointer;
+  justify-self: start;
 }
 
 select,
@@ -149,6 +147,8 @@ select {
 
 .checked {
   background-color: var(--gray-8);
+  color: var(--gray-1);
+  padding: 2px 0 0 0;
 }
 
 .unchecked {
@@ -231,4 +231,12 @@ select {
   font-size: 0.8rem;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.due-date {
+  grid-column: 1/-1;
+}
+
+.red {
+  color: red;
 }
