@@ -235,6 +235,8 @@ select {
 
 .due-date {
   grid-column: 1/-1;
+  margin-top: var(--space-sm);
+  font-size: 0.75rem;
 }
 
 .red {

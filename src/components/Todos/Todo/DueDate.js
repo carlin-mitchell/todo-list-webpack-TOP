@@ -1,5 +1,5 @@
 import Element from "../../Element";
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow, format } from "date-fns";
 // DYNAMIC VARIABLES
 
 // LINK STRINGS
@@ -9,9 +9,17 @@ import { formatDistanceToNow } from "date-fns";
 // COMPONENT
 const DueDate = (props) => {
   const { due } = props;
-  const dueString = due
-    ? formatDistanceToNow(new Date(due), { addSuffix: true })
-    : "no due date";
+
+  const dueDate = new Date(due);
+
+  const isDueString = due
+    ? `${formatDistanceToNow(dueDate, { addSuffix: true })}, ${format(
+        dueDate,
+        "MM/dd @ HH:mm"
+      )}`
+    : "";
+
+  const dueString = due ? isDueString : "no due date";
 
   const div = Element("div", {
     innerText: `${due ? "due" : ""} ${dueString}`,
