@@ -141,6 +141,11 @@ window.onresize = debounce((e) => {
   }
 });
 
+window.onload = function () {
+  const d = document.querySelector("#deadline-input");
+  console.log(d.value);
+};
+
 function refreshTodoForm() {}
 
 export default {

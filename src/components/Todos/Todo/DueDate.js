@@ -11,7 +11,7 @@ const DueDate = (props) => {
   const { due } = props;
   const dueString = due
     ? formatDistanceToNow(new Date(due), { addSuffix: true })
-    : "";
+    : "no due date";
 
   const div = Element("div", {
     innerText: `${due ? "due" : ""} ${dueString}`,
