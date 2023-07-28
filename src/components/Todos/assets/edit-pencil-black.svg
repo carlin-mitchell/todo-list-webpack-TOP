@@ -2,73 +2,35 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1000"
-   height="1000"
-   viewBox="0 0 1000 1000"
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458333"
    version="1.1"
-   id="svg5"
-   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
-   sodipodi:docname="edit-pencil-black.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   id="svg9154"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#505050"
-     inkscape:document-units="px"
-     showgrid="true"
-     inkscape:zoom="0.84096521"
-     inkscape:cx="183.71747"
-     inkscape:cy="584.44748"
-     inkscape:window-width="1920"
-     inkscape:window-height="1027"
-     inkscape:window-x="1512"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid4791"
-       dotted="false"
-       originx="0"
-       originy="0" />
-  </sodipodi:namedview>
   <defs
-     id="defs2" />
+     id="defs9151" />
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-73.907518,-51.363926)">
-    <path
-       style="fill:#212529;fill-opacity:1;stroke:#212529;stroke-width:1.05103;stroke-dasharray:none;stroke-opacity:1"
-       d=""
-       id="path1931"
-       transform="scale(0.26458333)" />
+     id="layer1">
     <g
-       id="g5044"
-       transform="rotate(30,573.82129,561.58063)"
-       style="fill:#212529;fill-opacity:1">
+       id="g9464"
+       transform="rotate(45,11.330786,13.340188)">
+      <rect
+         style="fill:#1a1a1a;stroke:#1a1a1a;stroke-width:0.952312"
+         id="rect9337"
+         width="5.6622725"
+         height="17.568523"
+         x="9.7365723"
+         y="4.4449058" />
       <path
-         id="rect4919"
-         style="fill:#212529;stroke:#212529;stroke-width:40.4027;fill-opacity:1"
-         d="m 514.18491,298.62994 120.02301,0.11069 -0.508,550.82069 -120.02301,-0.1107 z" />
+         style="fill:#1a1a1a;stroke:#1a1a1a;stroke-width:1.29669"
+         d="m 9.8069312,22.166287 2.8017448,4.38968 2.721579,-4.468773"
+         id="path9393" />
       <path
-         style="fill:#212529;fill-opacity:1;stroke:#212529;stroke-width:1.32737;stroke-dasharray:none;stroke-opacity:1"
-         d="m 493.79261,869.90805 79.7467,141.24365 80.00709,-141.09631"
-         id="path4923" />
-      <path
-         id="path4925"
-         style="fill:#212529;stroke:#212529;stroke-width:1.40416;fill-opacity:1"
-         d="m 494.10818,211.29033 c 0.0604,-65.49865 35.81961,-99.96701 79.89157,-99.92636 44.07196,0.0406 79.76751,34.5749 79.70711,100.07355 z"
-         sodipodi:nodetypes="cscc" />
+         style="fill:#1a1a1a;stroke:#1a1a1a;stroke-width:1.37229"
+         id="path9459"
+         d="M 9.9465613,0.63677168 A 2.6211467,2.4888983 0 0 1 12.567708,-1.8521266 2.6211467,2.4888983 0 0 1 15.188855,0.63677168 H 12.567708 Z" />
     </g>
   </g>
 </svg>
