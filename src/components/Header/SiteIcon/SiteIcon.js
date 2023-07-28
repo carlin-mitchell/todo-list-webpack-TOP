@@ -1,5 +1,5 @@
 import Element from "../../Element";
-import SiteIconSrc from "./assets/check-logo-white.png";
+import SiteIconSrc from "./assets/check-logo-white.svg";
 
 // COMPONENT
 const SiteIcon = () => {

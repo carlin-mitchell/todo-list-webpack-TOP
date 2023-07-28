@@ -7,6 +7,8 @@ import DueDate from "./DueDate";
 import data from "../../../managers/todoDataManager";
 import ui from "../../../managers/uiManager";
 
+import { truncateAndAddEllipse } from "../../../utils";
+
 // DYNAMIC VARIABLES
 
 // LINK STRINGS

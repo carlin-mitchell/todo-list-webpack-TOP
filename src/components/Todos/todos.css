@@ -29,7 +29,7 @@
 }
 
 #form-row-1 {
-  grid-template-columns: 1fr 7rem auto;
+  grid-template-columns: 1fr auto auto;
 }
 
 #form-row-3 {
@@ -70,7 +70,7 @@ button :hover {
 
 .todo button img,
 #todo-form button img {
-  height: 1.5rem;
+  height: var(--button-icon-height);
 }
 
 #todo-form input,
@@ -86,9 +86,16 @@ textarea {
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr 3rem;
+  grid-auto-rows: 2rem;
   justify-content: start;
   align-items: center;
   column-gap: var(--space-md);
+}
+
+.todo-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #todo-form:first-child {
@@ -180,7 +187,12 @@ select {
 
 #dateTimeInput-wrapper {
   display: grid;
-  grid-template-columns: 6rem max-content;
+  grid-template-columns: 8rem max-content;
+  font-size: 0.75rem;
+}
+#dateTimeInput-wrapper input {
+  font-size: 0.75rem;
+  width: 100%;
 }
 
 #dateTimeInput-wrapper button {
@@ -241,4 +253,8 @@ select {
 
 .red {
   color: red;
+}
+
+textarea {
+  resize: vertical;
 }

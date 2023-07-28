@@ -2,9 +2,8 @@ header {
   grid-area: header;
   display: grid;
   grid-template-columns: max-content 1fr 1fr;
-
   background-color: var(--gray-8);
-
+  color: white;
   padding: var(--space-md);
 
   z-index: 2;
@@ -16,6 +15,8 @@ header > * {
 
 #site-icon {
   margin-right: 0.75rem;
+  aspect-ratio: 1;
+  height: 3rem;
 }
 
 #site-title {

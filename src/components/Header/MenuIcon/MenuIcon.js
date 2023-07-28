@@ -1,5 +1,5 @@
 import Element from "../../Element";
-import MenuIconSrc from "./assets/menu-white.png";
+import MenuIconSrc from "./assets/menu-white.svg";
 
 import ui from "../../../managers/uiManager";
 
