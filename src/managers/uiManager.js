@@ -38,10 +38,10 @@ export function displayProjectTodos(projectName = "default") {
   const projectTodos = getProjectTodos(projectName);
   projectTodos.forEach((todoObj) => {
     const todoElement = Todo(todoObj);
-    todosContainer.appendChild(todoElement);
     if (todoObj.isNew) {
       data.updateProjectTodo({ isNew: false }, todoObj.id);
     }
+    todosContainer.appendChild(todoElement);
   });
 }
 

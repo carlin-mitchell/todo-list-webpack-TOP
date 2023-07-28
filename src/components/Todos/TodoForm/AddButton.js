@@ -1,7 +1,6 @@
 import Element from "../../Element";
 
 import PlusSignGray9 from "../assets/plus-sign-gray-9.svg";
-import PencilGray9 from "../assets/edit-pencil-black.svg";
 
 import data from "../../../managers/todoDataManager";
 import ui from "../../../managers/uiManager";
@@ -15,12 +14,16 @@ const addTodo = (e) => {
   const inputElement = document.querySelector("form input");
   const prioritySelector = document.querySelector("form select");
   const dateTimeSelector = document.querySelector("#deadline-input");
+  const detailsInput = document.querySelector("#details-input textarea");
+  console.log(detailsInput);
   const { value: todoContent } = inputElement;
   const { value: todoPriority } = prioritySelector;
   const { value: due } = dateTimeSelector;
-  const newTodoData = { todoContent, todoPriority, due };
+  const { value: details } = detailsInput;
+  const newTodoData = { todoContent, todoPriority, due, details };
   if (todoContent) {
-    console.log(data.addTodoToProject(newTodoData));
+    data.addTodoToProject(newTodoData);
+
     ui.clearInputValue(inputElement);
     ui.setSelectorElementValue(prioritySelector, 0);
     ui.refreshProjectTodos();
@@ -37,7 +40,7 @@ const AddButton = () => {
   });
 
   const plusSign = Element("img", {
-    src: PencilGray9,
+    src: PlusSignGray9,
   });
 
   button.appendChild(plusSign);
