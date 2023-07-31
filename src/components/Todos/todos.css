@@ -142,8 +142,8 @@ input,
 textarea,
 #todos-container button {
   height: 2rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
 }
 
 ::placeholder,
