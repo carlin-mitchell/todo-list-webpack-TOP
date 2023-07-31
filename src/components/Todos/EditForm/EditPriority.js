@@ -10,11 +10,11 @@ const EditPrioritySelector = () => {
   const label = Element("div", {
     className: "label",
     innerText: "Priority",
-    id: `edit-priority-selector`,
   });
 
   const select = Element("select", {
     className: ``,
+    id: `edit-priority-selector`,
   });
 
   const optionElements = optionsText.map((option, i) =>

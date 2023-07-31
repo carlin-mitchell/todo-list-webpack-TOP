@@ -92,6 +92,7 @@ export function setInputValue(inputElement, setValue) {
  * @param {int} selectedOptionIndex the index of the option to be set as selected
  */
 export function setSelectorElementValue(selectorElement, selectedOptionIndex) {
+  console.log(selectorElement, selectedOptionIndex);
   selectorElement.value =
     selectorElement.childNodes[selectedOptionIndex].innerText;
 }

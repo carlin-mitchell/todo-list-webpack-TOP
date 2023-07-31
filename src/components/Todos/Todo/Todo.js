@@ -8,8 +8,6 @@ import TodoDetailsToggle from "./DetailsToggle";
 
 import data from "../../../managers/todoDataManager";
 import ui from "../../../managers/uiManager";
-
-import { truncateAndAddEllipse } from "../../../utils";
 import Details from "./Details";
 
 // DYNAMIC VARIABLES

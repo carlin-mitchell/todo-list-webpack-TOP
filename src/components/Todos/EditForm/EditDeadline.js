@@ -9,6 +9,7 @@ const EditDeadline = () => {
   });
 
   const input = Element("input", {
+    id: "edit-deadline",
     type: "datetime-local",
   });
 
