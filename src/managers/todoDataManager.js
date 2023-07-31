@@ -4,7 +4,28 @@ export let todoData = {
   projects: {
     default: {},
   },
+  projectNames: [
+    {
+      id: "default-project",
+      name: "default",
+      current: true,
+    },
+  ],
 };
+
+export let currentProjectName = todoData.projectNames[0];
+
+export function getCurrentProjectName() {
+  return currentProjectName;
+}
+
+export function setCurrentProjectName(updateObj) {
+  currentProjectName = updateObj;
+}
+
+export function getAllProjectNames() {
+  return todoData.projectNames;
+}
 
 export function saveDataToLocalStorage() {
   window.localStorage.setItem("todoAppData", JSON.stringify(todoData));
@@ -63,6 +84,7 @@ export function addTodoToProject(newTodoData, projectName = "default") {
     priority: todoPriority.includes("!") ? todoPriority : "",
     details,
     detailsVisible: false,
+    projectName,
   };
 
   // add the new todo to the project
@@ -109,4 +131,6 @@ export default {
   updateProjectTodo,
   saveDataToLocalStorage,
   getDataFromLocalStorage,
+  getCurrentProjectName,
+  setCurrentProjectName,
 };

@@ -18,13 +18,12 @@ const SideBar = () => {
     className: `${window.innerWidth >= 800 ? "visible" : "hidden"}`,
   });
 
-  const placeholder = Element("div", {
+  const projectsHeader = Element("div", {
     className: "placeholder",
-    innerText:
-      "This will be a menu one day. Click the menu button (if visible) to hide/show it.",
+    innerText: "Projects",
   });
 
-  parentContainer.appendChild(placeholder);
+  parentContainer.appendChild(projectsHeader);
 
   return parentContainer;
 };

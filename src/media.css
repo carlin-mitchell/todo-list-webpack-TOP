@@ -35,6 +35,6 @@
   }
 
   #edit-form-container {
-    grid-row: 2/4;
+    grid-row: 2/-2;
   }
 }
