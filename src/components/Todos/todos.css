@@ -282,3 +282,17 @@ textarea {
   opacity: 0.75;
   z-index: 5;
 }
+
+#edit-form {
+  width: 20rem;
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background-color: var(--gray-4);
+}
+
+#edit-form input,
+#edit-form select,
+#edit-form textarea {
+  width: 100%;
+}
