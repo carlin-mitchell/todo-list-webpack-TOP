@@ -2,41 +2,31 @@ import Element from "../../Element";
 import data from "../../../managers/todoDataManager";
 import ui from "../../../managers/uiManager";
 
-function toggleTodoDetails(e, todo) {
-  console.log(todo.detailsVisible);
-  const { detailsVisible, id } = todo;
-  const showText = "show details";
-  const hideText = "hide details";
+function toggleTodoDetails(props) {
+  const { detailsVisible, id } = props;
+  const currentTodoObj = data.getProjectTodo(id);
   if (detailsVisible) {
-    // console.log(e.target.innerText);
-    e.target.innerText = hideText;
-    console.log(
-      data.updateProjectTodo(
-        { ...todo, detailsVisible: !detailsVisible, isNew: false },
-        id
-      )
+    data.updateProjectTodo(
+      { ...currentTodoObj, detailsVisible: !detailsVisible },
+      id
     );
-    ui.refreshProjectTodos();
   } else {
-    // e.target.innerText = showText;
-    console.log(
-      data.updateProjectTodo(
-        { ...todo, detailsVisible: !detailsVisible, isNew: false },
-        id
-      )
+    data.updateProjectTodo(
+      { ...currentTodoObj, detailsVisible: !detailsVisible },
+      id
     );
-    ui.refreshProjectTodos();
   }
+  ui.refreshProjectTodos();
 }
 
 // COMPONENT
 const TodoDetailsToggle = (props) => {
-  const todo = props;
+  const { detailsVisible, id } = props;
   const parentElement = Element("div", {
-    innerText: "show details",
+    innerText: `${detailsVisible ? "hide details" : "show details"}`,
     className: "toggle-text show-details",
-    onclick: function (e) {
-      toggleTodoDetails(e, todo);
+    onclick: function () {
+      toggleTodoDetails({ detailsVisible, id });
     },
   });
   return parentElement;

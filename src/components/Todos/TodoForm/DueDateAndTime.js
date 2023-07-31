@@ -1,8 +1,7 @@
 import Element from "../../Element";
-
 import PlusSignGray9 from "../assets/plus-sign-gray-9.svg";
 
-import ui, {
+import {
   hideDateTimeInput,
   showDateTimeInput,
 } from "../../../managers/uiManager";
@@ -31,7 +30,6 @@ const DueDateAndTimeInput = () => {
   const dateTimeInput = Element("input", {
     id: "deadline-input",
     type: "datetime-local",
-    value: "",
   });
 
   const label = Element("div", {

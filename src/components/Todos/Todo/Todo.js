@@ -30,11 +30,14 @@ const Component = (todoObj) => {
     details,
     detailsVisible,
   } = todoObj;
-  console.log(id, isNew);
   const parentContainer = Element("div", {
     id: id,
     // add the animation if the todo is new
     className: `todo todo-item ${isNew ? "slide-down" : ""}`,
+    onanimationend: function () {
+      data.updateProjectTodo({ isNew: false }, id);
+      ui.refreshProjectTodos();
+    },
   });
 
   const todoPriority = Element("div", {
@@ -51,7 +54,7 @@ const Component = (todoObj) => {
   parentContainer.appendChild(EditButton());
   parentContainer.appendChild(DeleteButton({ isNew, id }));
   parentContainer.appendChild(DueDate({ due }));
-  parentContainer.appendChild(TodoDetailsToggle(todoObj));
+  parentContainer.appendChild(TodoDetailsToggle({ detailsVisible, id }));
   parentContainer.appendChild(Details({ details, detailsVisible }));
 
   return parentContainer;

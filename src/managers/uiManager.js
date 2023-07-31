@@ -80,9 +80,10 @@ export function refreshProjectTodos(projectName = "default") {
 /**
  *
  * @param {element} inputElement a reference to the input element to clear
+ * @param {String} setValue the value to set the input to
  */
-export function clearInputValue(inputElement) {
-  inputElement.value = "";
+export function setInputValue(inputElement, setValue) {
+  inputElement.value = setValue;
 }
 
 /**
@@ -154,10 +155,9 @@ export default {
   refreshProjectTodos,
   showDateTimeInput,
   hideDateTimeInput,
-  clearInputValue,
+  setInputValue,
   setSelectorElementValue,
   toggleSidebar,
-
   getFormIsExpanded,
   setFormIsExpanded,
 };

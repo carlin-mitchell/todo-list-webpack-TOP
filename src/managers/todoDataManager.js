@@ -104,6 +104,7 @@ export function updateProjectTodo(updateObj, todoId, projectName = "default") {
 export default {
   removeTodoFromProject,
   getProjectTodos,
+  getProjectTodo,
   addTodoToProject,
   updateProjectTodo,
   saveDataToLocalStorage,
