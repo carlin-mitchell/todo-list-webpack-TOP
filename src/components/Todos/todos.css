@@ -3,6 +3,7 @@
   gap: var(--space-sm);
   grid-area: todos;
   padding: 45px 15%;
+  z-index: 4;
 }
 
 .todo,
@@ -268,4 +269,16 @@ select {
 
 textarea {
   resize: vertical;
+}
+
+#edit-form-container {
+  grid-area: main;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-2);
+  opacity: 0.75;
+  z-index: 5;
 }

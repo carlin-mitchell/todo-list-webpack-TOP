@@ -51,7 +51,7 @@ const Component = (todoObj) => {
 
   parentContainer.appendChild(Checkbox({ completed, id, priority }));
   parentContainer.appendChild(todoContent);
-  parentContainer.appendChild(EditButton());
+  parentContainer.appendChild(EditButton({ id }));
   parentContainer.appendChild(DeleteButton({ isNew, id }));
   parentContainer.appendChild(DueDate({ due }));
   parentContainer.appendChild(TodoDetailsToggle({ detailsVisible, id }));

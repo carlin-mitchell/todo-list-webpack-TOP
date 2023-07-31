@@ -39,4 +39,5 @@ module.exports = {
     minimizer: [new CssMinimizerPlugin()],
     minimize: true,
   },
+  cache: false,
 };
