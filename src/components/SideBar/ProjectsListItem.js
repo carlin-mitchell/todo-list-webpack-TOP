@@ -21,6 +21,7 @@ const ProjectsListItem = (props) => {
       data.setCurrentProjectName(id);
       ui.setProjectTitleToCurrent();
       ui.refreshCurrentProjects();
+      ui.refreshProjectTodos();
     },
   });
 

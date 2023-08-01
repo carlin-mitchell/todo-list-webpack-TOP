@@ -62,8 +62,19 @@ export function displayInitialTodos(projectName = "default") {
  */
 export function displayProjectTodos(projectName = "default") {
   const todosContainer = document.querySelector("#todos-container");
-  const projectTodos = getProjectTodos(projectName);
-  projectTodos.forEach((todoObj) => {
+  const currentProject = data.getCurrentProjectName();
+  const allProjects = getProjectTodos(projectName);
+  console.log(allProjects);
+  let projectsToShow;
+  if (currentProject.id !== "all-projects") {
+    projectsToShow = allProjects.filter(
+      (project) => project.projectId === currentProject.id
+    );
+  } else {
+    projectsToShow = allProjects;
+  }
+
+  projectsToShow.forEach((todoObj) => {
     const todoElement = Todo(todoObj);
     if (todoObj.isNew) {
       data.updateProjectTodo({ isNew: false }, todoObj.id);

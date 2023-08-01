@@ -6,14 +6,9 @@ export let todoData = {
   },
   projectNames: [
     {
-      id: "default-project",
-      name: "default",
+      id: "all-projects",
+      name: "All tasks",
       current: true,
-    },
-    {
-      id: "new-project",
-      name: "new project",
-      current: false,
     },
   ],
 };
@@ -67,6 +62,7 @@ export function getDataFromLocalStorage() {
  * @returns {array} an array of todo objects from the associated project name
  */
 export function getProjectTodos(projectName = "default") {
+  getDataFromLocalStorage();
   const projectTodos = todoData.projects[projectName];
   return Object.values(projectTodos);
 }
