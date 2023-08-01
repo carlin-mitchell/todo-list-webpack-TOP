@@ -21,6 +21,12 @@
   padding: var(--space-sm);
   border-radius: var(--br-sm);
   cursor: pointer;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: max-content;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
 .projects-list-item {
@@ -43,6 +49,26 @@ li.current-project {
 
 #add-project-form {
   margin-bottom: var(--space-lg);
+}
+
+#side-bar button {
+  width: 100%;
+  align-self: end;
+  margin-top: var(--space-lg);
+  padding: var(--space-sm);
+}
+
+.delete-project-button {
+  background-color: transparent;
+  border: none;
+  padding: 0 !important;
+  display: grid;
+  justify-content: center;
+  margin: 0 !important;
+}
+
+#side-bar button img {
+  height: 1rem;
 }
 
 .slide-down {

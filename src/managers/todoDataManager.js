@@ -29,6 +29,25 @@ export function addNewProjectName(newProjectName) {
   saveDataToLocalStorage();
 }
 
+export function deleteProject(projectId) {
+  // console.log("del", projectId);
+  const currentProjectNames = getAllProjectNames();
+
+  const newProjectNames = currentProjectNames.filter(
+    (project) => project.id != projectId
+  );
+
+  todoData.projectNames = newProjectNames;
+  saveDataToLocalStorage();
+}
+
+export function deleteAllProjectTodos(projectId) {
+  const currentTodos = getProjectTodos();
+  const newTodos = currentTodos.filter((todo) => todo.projectId != projectId);
+  todoData.projects.default = newTodos;
+  saveDataToLocalStorage();
+}
+
 export function setCurrentProjectName(id) {
   const updatedProjectNames = [...todoData.projectNames].map((project) =>
     project.id === id
@@ -46,6 +65,7 @@ export function setCurrentProjectName(id) {
 }
 
 export function getAllProjectNames() {
+  getDataFromLocalStorage();
   return todoData.projectNames;
 }
 
@@ -159,4 +179,6 @@ export default {
   setCurrentProjectName,
   getAllProjectNames,
   addNewProjectName,
+  deleteProject,
+  deleteAllProjectTodos,
 };

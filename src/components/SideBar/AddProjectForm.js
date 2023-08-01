@@ -3,12 +3,15 @@ import Element from "../Element";
 import data from "../../managers/todoDataManager";
 import ui from "../../managers/uiManager";
 
-function addNewProject() {
+function addNewProject(e) {
+  e.preventDefault();
   const newProjectInput = document.querySelector("#sidebar-input");
   const { value: newProjectName } = newProjectInput;
 
   data.addNewProjectName(newProjectName);
   ui.refreshCurrentProjects();
+  ui.setProjectTitleToCurrent();
+  ui.refreshProjectTodos();
   ui.setInputValue(newProjectInput, "");
 }
 
@@ -17,7 +20,9 @@ const AddProjectForm = () => {
   const form = Element("form", {
     id: "add-project-form",
     className: "sidebar-item",
-    onsubmit: addNewProject,
+    onsubmit: function (e) {
+      addNewProject(e);
+    },
   });
 
   const input = Element("input", {
