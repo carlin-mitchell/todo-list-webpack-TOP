@@ -1,8 +1,9 @@
 #side-bar {
   grid-area: sidebar;
   display: grid;
+  grid-auto-rows: max-content;
   padding: var(--space-lg);
-  justify-content: center;
+  justify-content: start;
   align-items: start;
   background-color: var(--gray-3);
   z-index: 1;
@@ -10,6 +11,25 @@
 
 .placeholder {
   font-weight: bold;
+}
+
+.projects-list-item {
+  list-style-type: none;
+  margin-left: var(--space-lg);
+  margin-top: var(--space-sm);
+  padding: var(--space-sm);
+  border-radius: var(--br-sm);
+  cursor: pointer;
+}
+
+.projects-list-item {
+  line-height: 1rem;
+  font-size: 1rem;
+  width: max-content;
+}
+
+li.current-project {
+  background-color: var(--gray-5);
 }
 
 .slide-down {

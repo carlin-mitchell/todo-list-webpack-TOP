@@ -2,6 +2,9 @@ import { getProjectTodos } from "./todoDataManager";
 
 import Todo from "../components/Todos/Todo/Todo";
 import TodoForm from "../components/Todos/TodoForm/TodoForm";
+import ProjectsListItem from "../components/SideBar/ProjectsListItem";
+
+import { capitalize } from "../utils";
 
 import data from "./todoDataManager";
 
@@ -12,6 +15,30 @@ let formIsExpanded = false;
 
 const getFormIsExpanded = () => formIsExpanded;
 const setFormIsExpanded = (state) => (formIsExpanded = state);
+
+export function clearCurrentProjects() {
+  const projectsList = document.querySelector(".projects-list");
+  removeAllButFirstNChildren(projectsList, 0);
+}
+
+export function displayCurrentProjects() {
+  const projectsList = document.querySelector(".projects-list");
+  const projectNames = data.getAllProjectNames();
+  projectNames.forEach((name) => {
+    projectsList.appendChild(ProjectsListItem(name));
+  });
+}
+
+export function refreshCurrentProjects() {
+  clearCurrentProjects();
+  displayCurrentProjects();
+}
+
+export function setProjectTitleToCurrent() {
+  const projectTitle = document.querySelector(".project-title");
+  const currentProject = data.getCurrentProjectName();
+  projectTitle.innerText = capitalize(currentProject.name);
+}
 
 /**
  * Similar to displayInitialTodos() but this function ensures the displayed todos are not marked as new
@@ -41,6 +68,7 @@ export function displayProjectTodos(projectName = "default") {
     if (todoObj.isNew) {
       data.updateProjectTodo({ isNew: false }, todoObj.id);
     }
+
     todosContainer.appendChild(todoElement);
   });
 }
@@ -161,4 +189,6 @@ export default {
   toggleSidebar,
   getFormIsExpanded,
   setFormIsExpanded,
+  refreshCurrentProjects,
+  setProjectTitleToCurrent,
 };

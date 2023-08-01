@@ -1,5 +1,7 @@
 import Element from "../Element";
 
+import ProjectsList from "./ProjectsList";
+
 // ANIMATION METHODS
 
 // Push menu to the side when the widow is wider than the threshold
@@ -24,6 +26,7 @@ const SideBar = () => {
   });
 
   parentContainer.appendChild(projectsHeader);
+  parentContainer.appendChild(ProjectsList());
 
   return parentContainer;
 };

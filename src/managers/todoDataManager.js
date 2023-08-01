@@ -10,6 +10,11 @@ export let todoData = {
       name: "default",
       current: true,
     },
+    {
+      id: "new-project",
+      name: "new project",
+      current: false,
+    },
   ],
 };
 
@@ -19,8 +24,25 @@ export function getCurrentProjectName() {
   return currentProjectName;
 }
 
-export function setCurrentProjectName(updateObj) {
-  currentProjectName = updateObj;
+export function addNewProjectName(obj) {
+  todoData.projectNames.push(obj);
+  saveDataToLocalStorage();
+}
+
+export function setCurrentProjectName(id) {
+  const updatedProjectNames = [...todoData.projectNames].map((project) =>
+    project.id === id
+      ? { ...project, current: true }
+      : { ...project, current: false }
+  );
+  todoData.projectNames = updatedProjectNames;
+
+  const thisProject = todoData.projectNames.find(
+    (project) => project.id === id
+  );
+
+  currentProjectName = thisProject;
+  saveDataToLocalStorage();
 }
 
 export function getAllProjectNames() {
@@ -45,7 +67,6 @@ export function getDataFromLocalStorage() {
  * @returns {array} an array of todo objects from the associated project name
  */
 export function getProjectTodos(projectName = "default") {
-  getDataFromLocalStorage();
   const projectTodos = todoData.projects[projectName];
   return Object.values(projectTodos);
 }
@@ -84,7 +105,7 @@ export function addTodoToProject(newTodoData, projectName = "default") {
     priority: todoPriority.includes("!") ? todoPriority : "",
     details,
     detailsVisible: false,
-    projectName,
+    projectId: getCurrentProjectName().id,
   };
 
   // add the new todo to the project
@@ -133,4 +154,6 @@ export default {
   getDataFromLocalStorage,
   getCurrentProjectName,
   setCurrentProjectName,
+  getAllProjectNames,
+  addNewProjectName,
 };
