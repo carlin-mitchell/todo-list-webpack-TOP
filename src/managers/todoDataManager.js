@@ -19,8 +19,13 @@ export function getCurrentProjectName() {
   return currentProjectName;
 }
 
-export function addNewProjectName(obj) {
-  todoData.projectNames.push(obj);
+export function addNewProjectName(newProjectName) {
+  const newProjectObj = { name: newProjectName, id: uuidv4() };
+  const currentProjectNames = getAllProjectNames();
+  const newProjectNames = [...currentProjectNames, newProjectObj];
+
+  todoData.projectNames = newProjectNames;
+  setCurrentProjectName(newProjectObj.id);
   saveDataToLocalStorage();
 }
 
@@ -53,6 +58,8 @@ export function getDataFromLocalStorage() {
 
   if (data) {
     todoData = JSON.parse(data);
+  } else {
+    saveDataToLocalStorage();
   }
 }
 

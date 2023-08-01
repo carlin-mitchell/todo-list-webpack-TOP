@@ -64,7 +64,6 @@ export function displayProjectTodos(projectName = "default") {
   const todosContainer = document.querySelector("#todos-container");
   const currentProject = data.getCurrentProjectName();
   const allProjects = getProjectTodos(projectName);
-  console.log(allProjects);
   let projectsToShow;
   if (currentProject.id !== "all-projects") {
     projectsToShow = allProjects.filter(
@@ -181,11 +180,6 @@ window.onresize = debounce((e) => {
     sideBar.className = "visible";
   }
 });
-
-window.onload = function () {
-  const d = document.querySelector("#deadline-input");
-  console.log(d.value);
-};
 
 function refreshTodoForm() {}
 

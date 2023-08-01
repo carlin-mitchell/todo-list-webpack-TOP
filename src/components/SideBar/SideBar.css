@@ -1,6 +1,7 @@
 #side-bar {
   grid-area: sidebar;
   display: grid;
+  grid-template-columns: 1fr;
   grid-auto-rows: max-content;
   padding: var(--space-lg);
   justify-content: start;
@@ -30,6 +31,18 @@
 
 li.current-project {
   background-color: var(--gray-5);
+}
+
+.sidebar-item {
+  width: 100%;
+}
+
+#sidebar-input {
+  padding: var(--space-sm);
+}
+
+#add-project-form {
+  margin-bottom: var(--space-lg);
 }
 
 .slide-down {

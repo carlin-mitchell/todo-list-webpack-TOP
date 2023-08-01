@@ -11,7 +11,7 @@ import ui from "../../../managers/uiManager";
 // ELEMENT METHODS
 const addTodo = (e) => {
   e.preventDefault();
-  const inputElement = document.querySelector("form input");
+  const inputElement = document.querySelector("#todo-form input");
   const prioritySelector = document.querySelector("form select");
   const dateTimeSelector = document.querySelector("#deadline-input");
   const detailsInput = document.querySelector("#details-input textarea");

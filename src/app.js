@@ -16,3 +16,8 @@ if (testing) {
 }
 
 ui.displayProjectTodos();
+
+window.onload = function () {
+  data.setCurrentProjectName("all-projects");
+  ui.refreshCurrentProjects();
+};

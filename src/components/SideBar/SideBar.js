@@ -1,6 +1,7 @@
 import Element from "../Element";
 
 import ProjectsList from "./ProjectsList";
+import AddProjectForm from "./AddProjectForm";
 
 // ANIMATION METHODS
 
@@ -24,7 +25,7 @@ const SideBar = () => {
     className: "placeholder",
     innerText: "Projects",
   });
-
+  parentContainer.appendChild(AddProjectForm());
   parentContainer.appendChild(projectsHeader);
   parentContainer.appendChild(ProjectsList());
 
