@@ -1,7 +1,6 @@
 import { getProjectTodos } from "./todoDataManager";
 
 import Todo from "../components/Todos/Todo/Todo";
-import TodoForm from "../components/Todos/TodoForm/TodoForm";
 import ProjectsListItem from "../components/SideBar/ProjectsListItem";
 
 import { capitalize } from "../utils";
